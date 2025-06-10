@@ -10,3 +10,19 @@ st.set_page_config(
 
 app_sidebar.create_sidebar()
 
+st.markdown(
+    """
+    <style>
+        .top-banner {
+            width: 100%;
+            height: 150px;
+            background-image: url('https://via.placeholder.com/1500x150');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
+    </style>
+    <div class="top-banner"></div>
+    """,
+    unsafe_allow_html=True
+)
