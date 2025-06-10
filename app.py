@@ -10,5 +10,3 @@ st.set_page_config(
 
 app_sidebar.create_sidebar()
 
-
-
