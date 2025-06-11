@@ -1,7 +1,5 @@
 import streamlit as st
-from components import app_sidebar
-from components import local_def
-
+from components import app_sidebar, local_def
 
 st.set_page_config(
     page_title="Planetary Insight Engine",
