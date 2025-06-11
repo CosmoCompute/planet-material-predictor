@@ -21,7 +21,7 @@ def upload():
             # Show success message and the DataFrame preview
             st.success("✅ File uploaded successfully!")
             st.write("### 🔍 Data Preview")
-            st.dataframe(df.head(20))  # Show only top 20 rows
+            st.dataframe(df)  # Show only top 20 rows
 
             return df
 
