@@ -1,6 +1,5 @@
 import streamlit as st
-from components import app_sidebar
-from components import local_def
+from components import app_sidebar, local_def, upload_page
 
 st.set_page_config(
     page_title="Planetary Insight Engine",
@@ -27,3 +26,5 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
+if page == "Home":
+    upload_page.upload()
