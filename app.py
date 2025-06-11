@@ -14,16 +14,15 @@ app_sidebar.create_sidebar()
 local_def.load_css("assets/style.css")
 st.markdown("""
     <div class="main-header">
-        <div style="position: relative; z-index: 1;">
+        <div style="position: relative; z-index=1;">
             <div class="planet-animation" style="font-size: 4rem; margin-bottom: 1rem;">🪐</div>
-            <h1>Planet Material Predictor</h1>
-            <p>🚀 Advanced AI-powered analysis for planetary composition prediction</p>
+            <h1 class="Edu">Planet Material Predictor</h1>
+            <p>Advanced analysis for planetary composition prediction</p>
             <div style="margin-top: 2rem;">
-                <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; margin: 0 0.5rem;">✨ ML Powered</span>
-                <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; margin: 0 0.5rem;">🎯 95%+ Accuracy</span>
-                <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; margin: 0 0.5rem;">⚡ Real-time</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 10px; margin: 0 0.5rem;">✨ ML Powered</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 10px; margin: 0 0.5rem;">🎯 95%+ Accuracy</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 10px; margin: 0 0.5rem;">⚡ Real-time</span>
             </div>
         </div>
     </div>
 """, unsafe_allow_html=True)
-
