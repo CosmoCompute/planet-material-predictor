@@ -9,7 +9,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-app_sidebar.create_sidebar()
+page=app_sidebar.create_sidebar()
 
 local_def.load_css("assets/style.css")
 st.markdown("""
@@ -26,3 +26,4 @@ st.markdown("""
         </div>
     </div>
 """, unsafe_allow_html=True)
+
