@@ -27,7 +27,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 if page == "Home":
-    # Main app
-   
+    st.title("home")
+
+elif page == "Upload":
     st.title("📊 Streamlit Data Uploader")
     upload_page.upload()
