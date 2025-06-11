@@ -28,6 +28,6 @@ st.markdown("""
 
 if page == "Home":
     # Main app
-    st.set_page_config(page_title="📂 Upload App", layout="centered")
+   
     st.title("📊 Streamlit Data Uploader")
     upload_page.upload()
