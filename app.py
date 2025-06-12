@@ -26,6 +26,8 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
+tr=None
+
 if page == "Home":
     st.title("home")
 
