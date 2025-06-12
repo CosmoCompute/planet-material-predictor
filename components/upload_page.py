@@ -8,31 +8,29 @@ def upload():
     Returns:
         pd.DataFrame or None
     """
-    uploaded_file = st.file_uploader("📤 Upload CSV or Excel File", type=["csv", "xlsx", "xls"])
 
-    if uploaded_file is not None:
-        try:
+    col1, col2 = st.columns([2,1])
+
+    with col1:
+        uploaded_file = st.file_uploader("📤 Upload CSV or Excel File", type=["csv", "xlsx", "xls"])
+
+        if uploaded_file is not None:
+            try:
             # Read the uploaded file into a DataFrame
-            if uploaded_file.name.endswith(".csv"):
-                df = pd.read_csv(uploaded_file)
-            else:
-                df = pd.read_excel(uploaded_file)
+                if uploaded_file.name.endswith(".csv"):
+                    df = pd.read_csv(uploaded_file)
+                else:
+                    df = pd.read_excel(uploaded_file)
 
-            # Show success message and the DataFrame preview
-            st.success("✅ File uploaded successfully!")
-            st.write("### 🔍 Data Preview")
-            st.dataframe(df)  # Show only top 20 rows
+            # Show success message
+                st.success("✅ File uploaded successfully!")
+                
 
-            return df
+                return df
 
-        except Exception as e:
-            st.error(f"❌ Error reading file: {e}")
+            except Exception as e:
+                st.error(f"❌ Error reading file: {e}")
+                return None
+        else:
+            st.info("Please upload a file to begin.")
             return None
-    else:
-        st.info("Please upload a file to begin.")
-        return None
-
-
-
-
-

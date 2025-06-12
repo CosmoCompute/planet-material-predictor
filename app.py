@@ -31,4 +31,10 @@ if page == "Home":
 
 elif page == "Upload":
     st.title("📊 Streamlit Data Uploader")
-    upload_page.upload()
+    tr=upload_page.upload()
+
+
+if tr is None:
+    st.write("upload")
+else:
+    st.write(tr)
