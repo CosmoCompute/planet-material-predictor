@@ -30,7 +30,7 @@ if page == "Home":
     st.title("home")
 
 elif page == "Data Analysis":
-    st.write("hello")
+    data_analysis.data_anly()
 
 elif page == "Upload":
     expect=upload_page.upload()
