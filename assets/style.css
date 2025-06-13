@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Vamos';
+  src: url('./vamos.otf') format('opentype');
+}
+
+/*Error*/
+.Edu {
+    font-family: 'Vamos';
+}
+/*=====*/
+
+.main-header {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.main-header::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="30" r="1.5" fill="white" opacity="0.1"/><circle cx="40" cy="70" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="80" r="2.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="1.2" fill="white" opacity="0.1"/></svg>');
+}
+
+.main-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.main-header p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.planet-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+/*Animations*/
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
