@@ -1,5 +1,5 @@
 import streamlit as st
-from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis
+from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis, mars_weather
 from utils import db_utils
 st.set_page_config(
     page_title="Planetary Insight Engine",
@@ -36,6 +36,9 @@ elif page == "Upload":
     expect=upload_page.upload()
     if expect is None:
         st.subheader("Upload a File")
+
+elif page == "Mars Weather":
+    mars_weather.render_mars_weather_page()
 
 else:
     notfoundpage.notfound()

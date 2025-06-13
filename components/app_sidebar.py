@@ -1,20 +1,20 @@
 import streamlit as st
 
 def create_sidebar():
- st.sidebar.title("🚀 Navigator")
- page_options ={
-    "🏠 Home": "Home",
-    "🔮 Predict Materials": "Predict Materials",
-    "📊 Data Analysis": "Data Analysis",
-    "🧪 Upload": "Upload",
-    "👥 About Team": "About"
- }
-
- selected_page=st.sidebar.selectbox(
-  "Choose a Section",
-  list(page_options.keys())
- )
-
- page=page_options[selected_page]
-
- return page
+   with st.sidebar:
+        st.markdown("# 🪐 Navigation")
+        st.markdown("---")
+        
+        page = st.selectbox(
+            "Select Page:",
+            ["Home", "Data Analysis", "Mars Weather", "Upload", "👥 About Team"],
+            format_func=lambda x: {
+                "Home": "🏠 Home",
+                "Data Analysis": "📊 Data Analysis", 
+                "Mars Weather": "🌌 Mars Weather",
+                "Upload": "📤 Upload",
+                "👥 About Team": "👥 About Team"  # Changed from "About" to "👥 About Team"
+            }[x]
+        )
+   st.markdown("---")
+   return page
