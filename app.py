@@ -30,7 +30,9 @@ if page == "Home":
     st.title("home")
 
 elif page == "Upload":
-    upload_page.upload()
+    expect=upload_page.upload()
+    if expect is None:
+        st.subheader("Upload a File")
 
 else:
     notfoundpage.notfound()

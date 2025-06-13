@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import duckdb
+import os
 
 def upload():
     """
@@ -29,6 +31,19 @@ def upload():
                 st.success("✅ File uploaded successfully!")
             else:
                 st.warning("⚠️ This file is already uploaded.")
+            
+            file_name=uploaded_file.name
+            db_name=f"{file_name}.db"
+            db_path=os.path.join("data", db_name)
+            table_name=os.path.splitext(file_name)[0].replace(" ", "_")
+            os.makedirs("data", exist_ok=True)
+
+            con=duckdb.connect(db_path)
+            con.execute(f"DROP TABLE IF EXISTS {table_name}")
+            con.execute(f"CREATE TABLE {table_name} AS SELECT * FROM df")
+            con.close()
+
+            st.success(f"Saved to {db_path} under table {table_name}")
 
             # ✅ Show uploaded files with delete option
             st.subheader("📁 Uploaded Files")
@@ -40,7 +55,6 @@ def upload():
                     if st.button("🗑️ Delete", key=f"delete_{i}"):
                         del st.session_state.uploaded_files[i]
                         st.experimental_rerun()
-
             return df
 
         except Exception as e:
