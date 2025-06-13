@@ -1,6 +1,6 @@
 import streamlit as st
 from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis
-
+from utils import db_utils
 st.set_page_config(
     page_title="Planetary Insight Engine",
     page_icon="assets/icons/icon.png",
@@ -30,7 +30,7 @@ if page == "Home":
     st.title("home")
 
 elif page == "Data Analysis":
-    data_analysis.data_analysis()
+    sd
 
 elif page == "Upload":
     expect=upload_page.upload()
