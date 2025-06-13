@@ -1,5 +1,5 @@
 import streamlit as st
-from components import app_sidebar, local_def, upload_page
+from components import app_sidebar, local_def, upload_page, notfoundpage
 
 st.set_page_config(
     page_title="Planetary Insight Engine",
@@ -26,17 +26,11 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-tr=None
-
 if page == "Home":
     st.title("home")
 
 elif page == "Upload":
-    st.title("📊 Streamlit Data Uploader")
-    tr=upload_page.upload()
+    upload_page.upload()
 
-
-if tr is None:
-    st.write("upload")
 else:
-    st.write(tr)
+    notfoundpage.notfound()

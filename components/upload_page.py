@@ -7,6 +7,7 @@ def upload():
     Returns:
         pd.DataFrame or None
     """
+    st.title("📊 Streamlit Data Uploader")
 
     # ✅ Initialize session state for uploaded_files
     if "uploaded_files" not in st.session_state:
