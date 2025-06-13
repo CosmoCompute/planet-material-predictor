@@ -34,7 +34,7 @@ def upload():
             
             file_name_with_ext=uploaded_file.name
             file_name, _ = os.path.splitext(file_name_with_ext)
-            db_name=f"{file_name}.db"
+            db_name=f"{file_name}.duckdb"
             db_path=os.path.join("data", db_name)
             table_name=os.path.splitext(file_name)[0].replace(" ", "_")
             os.makedirs("data", exist_ok=True)

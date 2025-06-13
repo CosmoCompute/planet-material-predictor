@@ -1,5 +1,5 @@
 import streamlit as st
-from components import app_sidebar, local_def, upload_page, notfoundpage
+from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis
 
 st.set_page_config(
     page_title="Planetary Insight Engine",
@@ -28,6 +28,9 @@ st.markdown("""
 
 if page == "Home":
     st.title("home")
+
+elif page == "Data Analysis":
+    data_analysis.data_analysis()
 
 elif page == "Upload":
     expect=upload_page.upload()
