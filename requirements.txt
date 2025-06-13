@@ -5,3 +5,5 @@ statsmodels
 matplotlib
 gdown
 pandas
+seaborn
+scikit-learn
