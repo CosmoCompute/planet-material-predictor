@@ -32,7 +32,8 @@ def upload():
             else:
                 st.warning("⚠️ This file is already uploaded.")
             
-            file_name=uploaded_file.name
+            file_name_with_ext=uploaded_file.name
+            file_name, _ = os.path.splitext(file_name_with_ext)
             db_name=f"{file_name}.db"
             db_path=os.path.join("data", db_name)
             table_name=os.path.splitext(file_name)[0].replace(" ", "_")
