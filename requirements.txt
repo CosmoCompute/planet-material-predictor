@@ -1,4 +1,0 @@
-streamlit
-openpyxl
-duckdb
-statsmodels
