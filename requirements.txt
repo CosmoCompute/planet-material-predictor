@@ -2,3 +2,6 @@ streamlit
 openpyxl
 duckdb
 statsmodels
+matplotlib
+gdown
+pandas
