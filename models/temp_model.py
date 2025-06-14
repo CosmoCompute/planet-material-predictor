@@ -3,7 +3,7 @@ import streamlit as st
 @st.cache_resource
 def load_model():
     import gdown, pickle, os
-    file_id = "1nrItW1IYiuFGMJ4i3fDjhsjCqxctLZsW"
+    file_id = "1EW1y5ULRBOZ8FazZI_LB7UmK5XZjjzi9"
     url = f"https://drive.google.com/uc?id={file_id}"
     output_path = "temp_model.pkl"
 
