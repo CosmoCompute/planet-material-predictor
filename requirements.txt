@@ -7,3 +7,4 @@ gdown
 pandas
 seaborn
 scikit-learn
+plotly
