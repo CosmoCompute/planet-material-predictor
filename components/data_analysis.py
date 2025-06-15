@@ -1,3 +1,17 @@
+A Streamlit web application for comprehensive climate data analysis featuring:
+- Statistical trend analysis
+- Machine learning predictions
+- Extreme weather detection
+- Seasonal pattern visualization
+- Interactive data exploration
+
+Key Components:
+1. Data Loading & Preparation
+2. Climate Trend Analysis
+3. Predictive Modeling
+4. Visualization System
+5. Reporting Framework
+
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
