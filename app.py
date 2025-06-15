@@ -1,16 +1,24 @@
-import streamlit as st
+import streamlit as st  
+
+# Importing custom-built components like the sidebar, page handlers, and utilities.
 from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis, mars_weather
-from utils import db_utils
+from utils import db_utils  # Utility functions for database (if used)
+
+# Setting the basic layout and configuration of the web page.
 st.set_page_config(
-    page_title="Planetary Insight Engine",
-    page_icon="assets/icons/icon.png",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title="Planetary Insight Engine",      # Title of the browser tab
+    page_icon="assets/icons/icon.png",          # Favicon (small icon on tab)
+    layout="wide",                              # Page will take full screen width
+    initial_sidebar_state="expanded"            # Sidebar will be expanded by default
 )
 
-page=app_sidebar.create_sidebar()
+# Creating a navigation sidebar and saving the selected page name to "page"
+page = app_sidebar.create_sidebar()
 
+# Loading custom CSS to improve the look and feel of the page.
 local_def.load_css("assets/style.css")
+
+# Adding a header to the web page using HTML inside Streamlit.
 st.markdown("""
     <div class="main-header">
         <div style="position: relative; z-index=1;">
@@ -24,21 +32,24 @@ st.markdown("""
             </div>
         </div>
     </div>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True)  # Allow raw HTML to style content
+
+# Depending on what the user selects from the sidebar, show the correct page
 
 if page == "Home":
-    st.title("home")
+    st.title("Home")  # Simple placeholder title for the homepage
 
 elif page == "Data Analysis":
-    data_analysis.main()
+    data_analysis.main()  # Run the Data Analysis module when selected
 
 elif page == "Upload":
-    expect=upload_page.upload()
+    expect = upload_page.upload()  # Load the file upload page
     if expect is None:
-        st.subheader("Upload a File")
+        st.subheader("Upload a File")  # If nothing is uploaded, prompt the user
 
 elif page == "Mars Weather":
-    mars_weather.render_mars_weather_page()
+    mars_weather.render_mars_weather_page()  # Show live Mars weather page
 
 else:
-    notfoundpage.notfound()
+    notfoundpage.notfound()  # If the page doesn't exist, show a "Not Found" message
+
