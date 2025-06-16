@@ -13,7 +13,7 @@ def create_sidebar():
         # Dropdown menu for selecting which page to view
         page = st.selectbox(
             "Select Page:",  # Label shown above the dropdown
-            ["Home", "Data Analysis", "Mars Weather", "Upload", "👥 About Team"],  # List of pages
+            ["Home", "Data Analysis", "Mars Weather", "Upload", "About Team"],  # List of pages
             format_func=lambda x: {
                 "🏠 Home": "Home",                   # Add emojis for better UI
                 "📊 Data Analysis": "Data Analysis",
