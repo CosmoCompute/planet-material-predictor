@@ -6,7 +6,6 @@ def create_sidebar():
     pages = {
         "🏠 Home": "Home",
         "📊 Data Analysis": "Data Analysis",
-        "🌌 Mars Weather": "Mars Weather",
         "📤 Upload": "Upload",
         "👥 About Team": "About Team"
     }
