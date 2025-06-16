@@ -17,7 +17,6 @@ def create_sidebar():
             format_func=lambda x: {
                 "Home": "🏠 Home",                   # Add emojis for better UI
                 "Data Analysis": "📊 Data Analysis",
-                "Mars Weather": "🌌 Mars Weather",
                 "Upload": "📤 Upload",
                 "👥 About Team": "👥 About Team"      # Team/about section
             }[x]  # This function replaces the text with icons + labels
