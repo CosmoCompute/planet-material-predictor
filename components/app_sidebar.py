@@ -15,10 +15,10 @@ def create_sidebar():
             "Select Page:",  # Label shown above the dropdown
             ["Home", "Data Analysis", "Mars Weather", "Upload", "👥 About Team"],  # List of pages
             format_func=lambda x: {
-                "Home": "🏠 Home",                   # Add emojis for better UI
-                "Data Analysis": "📊 Data Analysis",
-                "Upload": "📤 Upload",
-                "👥 About Team": "👥 About Team"      # Team/about section
+                "🏠 Home": "Home",                   # Add emojis for better UI
+                "📊 Data Analysis": "Data Analysis",
+                "📤 Upload": "Upload",
+                "👥 About Team": "About Team"      # Team/about section
             }[x]  # This function replaces the text with icons + labels
         )
 
