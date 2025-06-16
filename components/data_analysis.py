@@ -13,6 +13,7 @@ import warnings
 from scipy import stats
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import pickle
+from pathlib import Path
 warnings.filterwarnings('ignore')
 
 # Directory setup
@@ -27,7 +28,11 @@ from models.temp_model import load_model
 
 def load_and_prepare_data():
     try:
-        file_name = "Earth.duckdb"
+        directory = Path("data/")
+        file_dict = {f.stem: f.name for f in directory.iterdir() if f.is_file()}
+        selected_name = st.selectbox("Select a file:", list(file_dict.keys()))
+
+        file_name = file_dict[selected_name]
         df = db_utils.load_db(file_name)
         df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
         df.set_index('Date', inplace=True)
