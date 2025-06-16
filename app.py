@@ -1,7 +1,7 @@
 import streamlit as st  
 
 # Importing custom-built components like the sidebar, page handlers, and utilities.
-from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis, mars_weather
+from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis
 from utils import db_utils  # Utility functions for database (if used)
 
 # Setting the basic layout and configuration of the web page.
