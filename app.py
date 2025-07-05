@@ -43,9 +43,7 @@ elif page == "Data Analysis":
     data_analysis.main()  # Run the Data Analysis module when selected
 
 elif page == "Upload":
-    expect = upload_page.upload()  # Load the file upload page
-    if expect is None:
-        st.subheader("Upload a File")  # If nothing is uploaded, prompt the user
+    upload_page.upload()  # Load the file upload page  # If nothing is uploaded, prompt the user
 
 elif page == "Mars Weather":
     mars_weather.render_mars_weather_page()  # Show live Mars weather page
