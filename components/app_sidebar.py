@@ -21,3 +21,25 @@ def create_sidebar():
 
     # Return the actual page value
     return pages[display_name]
+
+def upload_page_sidebar():
+    with st.sidebar:
+        st.header("⚙️ Settings")
+        
+        st.subheader("📁 File Preferences")
+        auto_detect_encoding = st.checkbox("Auto-detect encoding", value=True)
+        max_file_size = st.slider("Max file size (MB)", 1, 200, 50)
+        
+        st.subheader("📊 Analysis Options")
+        show_stats = st.checkbox("Show statistics", value=True)
+        generate_report = st.checkbox("Generate PDF report", value=False)
+        
+        st.subheader("⚡ Processing Options")
+        handle_missing = st.selectbox("Handle missing values", ["Keep as-is", "Drop rows", "Fill with mean"])
+        
+        st.markdown("---")
+        st.markdown("💡 Tips:")
+        st.markdown("• Upload CSV or Excel files up to 200MB")
+        st.markdown("• Use descriptive filenames")
+        st.markdown("• Check data quality before analysis")
+    

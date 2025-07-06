@@ -7,6 +7,9 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from components import app_sidebar, local_def
+
+local_def.load_css("assets/style.css")
 
 def header():
     st.markdown("""
@@ -18,9 +21,11 @@ def header():
 
 def upload():
     header()
+    app_sidebar.upload_page_sidebar()
+
+    col1, col2 = st.columns(2)
     
-    with st.sidebar:
-        st.header("⚙️ Settings")
+
 
 
 #upload page update
