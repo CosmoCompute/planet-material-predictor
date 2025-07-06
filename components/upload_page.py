@@ -105,7 +105,7 @@ def create_professional_header():
     
     st.markdown("""
     <div class="main-header">
-        <h1 class="header-title">📊 Professional Data Analytics Platform</h1>
+        <h1 class="header-title">Professional Data Analytics Platform</h1>
         <p class="header-subtitle">Advanced file upload, analysis, and data modeling capabilities</p>
     </div>
     """, unsafe_allow_html=True)
@@ -431,7 +431,7 @@ def upload():
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; color: #7f8c8d; padding: 2rem;">
-        <p>Professional Data Analytics Platform | Built by team CosmoX</p>
+        <p>Professional Data Analytics Platform | Built by team Cosmo Compute</p>
         <p>Upload • Analyze • Visualize • Model</p>
     </div>
     """, unsafe_allow_html=True)
