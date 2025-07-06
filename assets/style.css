@@ -155,3 +155,90 @@
     border: 1px solid #ffeaa7;
     margin: 1rem 0;
 }
+
+.stats-card-professional {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+        
+.metric-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+        
+.metric-value-professional {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+}
+        
+.metric-label-professional {
+    font-size: 14px;
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+}
+        
+.upload-section-professional {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+        
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+        
+.section-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+        
+.section-title-professional {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+        
+.success-message-professional, .warning-message-professional, .info-message-professional {
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+        
+.success-message-professional {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+        
+.warning-message-professional {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+}
+        
+.info-message-professional {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+}
+        
+.message-icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
