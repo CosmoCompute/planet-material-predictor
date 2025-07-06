@@ -148,5 +148,4 @@ def upload_page_sidebar():
             st.rerun()
         except Exception as e:
             st.sidebar.error(f"Error importing settings: {str(e)}")
-    st.sidebar.markdown('<div class="sidebar-divider"></div>', unsafe_allow_html=True)
     return st.session_state.analysis_settings
