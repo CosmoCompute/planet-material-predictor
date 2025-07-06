@@ -108,21 +108,24 @@ def upload_page_sidebar():
     st.sidebar.markdown('<div class="sidebar-divider"></div>', unsafe_allow_html=True)
     st.sidebar.markdown("Quick Actions")
     
-    if st.button("🔄 Reset Settings", help="Reset all settings to default values"):
-        st.session_state.analysis_settings = {
-            'max_file_size': 50,
-            'auto_detect_encoding': True,
-            'handle_missing': 'Keep as-is',
-            'show_detailed_info': True,
-            'show_advanced_stats': False,
-            'sample_size': 10,
-            'show_statistics': True,
-            'correlation_threshold': 0.5,
-            'chart_theme': 'plotly',
-            'decimal_places': 2,
-            'date_format': 'auto'
-        }
-        st.rerun()
+    col1, col2 = st.sidebar.columns(2)
+    with col1:
+        if st.button("🔄 Reset Settings", help="Reset all settings to default values"):
+            st.session_state.analysis_settings = {
+                'max_file_size': 50,
+                'auto_detect_encoding': True,
+                'handle_missing': 'Keep as-is',
+                'show_detailed_info': True,
+                'show_advanced_stats': False,
+                'sample_size': 10,
+                'show_statistics': True,
+                'correlation_threshold': 0.5,
+                'chart_theme': 'plotly',
+                'decimal_places': 2,
+                'date_format': 'auto'
+            }
+            st.rerun()
+            
     st.sidebar.markdown("Settings Management")
 
     if st.sidebar.button("📤 Export Settings"):
