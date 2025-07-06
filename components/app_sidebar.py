@@ -125,7 +125,7 @@ def upload_page_sidebar():
                 'date_format': 'auto'
             }
             st.rerun()
-            
+
     st.sidebar.markdown("Settings Management")
 
     if st.sidebar.button("📤 Export Settings"):
@@ -151,8 +151,7 @@ def upload_page_sidebar():
             st.rerun()
         except Exception as e:
             st.sidebar.error(f"Error importing settings: {str(e)}")
-    st.sidebar.markdown('<div class="sidebar-divider"></div>', unsafe_allow_html=True)
-
+    
     st.session_state.analysis_settings.update({
         'max_file_size': max_file_size,
         'handle_missing': handle_missing,
