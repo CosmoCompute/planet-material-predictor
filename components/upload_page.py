@@ -7,113 +7,22 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-
+from components import local_def
 
 def create_professional_header():
-    """Create a professional header with custom styling"""
-    st.markdown("""
-    <style>
-    .main-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 2rem;
-        border-radius: 15px;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .header-title {
-        color: white;
-        font-size: 2.5rem;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 0.5rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    .header-subtitle {
-        color: #f0f0f0;
-        font-size: 1.2rem;
-        text-align: center;
-        margin-bottom: 0;
-    }
-    .upload-section {
-        background: #f8f9fa;
-        padding: 2rem;
-        border-radius: 10px;
-        border: 2px dashed #e9ecef;
-        margin: 1rem 0;
-        transition: all 0.3s ease;
-    }
-    .upload-section:hover {
-        border-color: #667eea;
-        background: #f0f4ff;
-    }
-    .section-title {
-        color: #2c3e50;
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    .stats-card {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        border-left: 4px solid #667eea;
-        margin: 0.5rem 0;
-    }
-    .metric-value {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #2c3e50;
-        margin: 0;
-    }
-    .metric-label {
-        color: #7f8c8d;
-        font-size: 0.9rem;
-        margin: 0;
-    }
-    .file-item {
-        background: white;
-        padding: 1rem;
-        border-radius: 8px;
-        border: 1px solid #e9ecef;
-        margin: 0.5rem 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .success-message {
-        background: #d4edda;
-        color: #155724;
-        padding: 1rem;
-        border-radius: 8px;
-        border: 1px solid #c3e6cb;
-        margin: 1rem 0;
-    }
-    .warning-message {
-        background: #fff3cd;
-        color: #856404;
-        padding: 1rem;
-        border-radius: 8px;
-        border: 1px solid #ffeaa7;
-        margin: 1rem 0;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    
     
     st.markdown("""
-    <div class="main-header">
-        <h1 class="header-title">Professional Data Analytics Platform</h1>
-        <p class="header-subtitle">Advanced file upload, analysis, and data modeling capabilities</p>
+    <div class="main-header-upload-section">
+        <h1 class="header-title-upload-section">Professional Data Analytics Platform</h1>
+        <p class="header-subtitle-upload-section">Advanced file upload, analysis, and data modeling capabilities</p>
     </div>
     """, unsafe_allow_html=True)
 
 
 def analyze_dataframe(df, file_name):
     """Perform comprehensive analysis of the uploaded DataFrame"""
-    st.markdown('<div class="section-title">📈 Data Analysis Results</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title-upload-section">📈 Data Analysis Results</div>', unsafe_allow_html=True)
     
     # Create tabs for different analysis views
     tab1, tab2, tab3, tab4 = st.tabs(["📊 Overview", "🔍 Data Quality", "📈 Visualizations", "📋 Sample Data"])
@@ -124,16 +33,16 @@ def analyze_dataframe(df, file_name):
         with col1:
             st.markdown(f"""
             <div class="stats-card">
-                <p class="metric-value">{len(df)}</p>
-                <p class="metric-label">Total Rows</p>
+                <p class="metric-value-upload-section">{len(df)}</p>
+                <p class="metric-label-upload-section">Total Rows</p>
             </div>
             """, unsafe_allow_html=True)
         
         with col2:
             st.markdown(f"""
             <div class="stats-card">
-                <p class="metric-value">{len(df.columns)}</p>
-                <p class="metric-label">Total Columns</p>
+                <p class="metric-value-upload-section">{len(df.columns)}</p>
+                <p class="metric-label-upload-section">Total Columns</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -141,17 +50,17 @@ def analyze_dataframe(df, file_name):
             memory_usage = df.memory_usage(deep=True).sum() / 1024 / 1024
             st.markdown(f"""
             <div class="stats-card">
-                <p class="metric-value">{memory_usage:.2f} MB</p>
-                <p class="metric-label">Memory Usage</p>
+                <p class="metric-value-upload-section">{memory_usage:.2f} MB</p>
+                <p class="metric-label-upload-section">Memory Usage</p>
             </div>
             """, unsafe_allow_html=True)
         
         with col4:
             numeric_cols = len(df.select_dtypes(include=[np.number]).columns)
             st.markdown(f"""
-            <div class="stats-card">
-                <p class="metric-value">{numeric_cols}</p>
-                <p class="metric-label">Numeric Columns</p>
+            <div class="stats-card-upload-section">
+                <p class="metric-value-upload-section">{numeric_cols}</p>
+                <p class="metric-label-upload-section">Numeric Columns</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -258,10 +167,9 @@ def analyze_dataframe(df, file_name):
 
 
 def upload_section(section_title, section_key, icon):
-    """Create a professional upload section"""
     st.markdown(f"""
-    <div class="upload-section">
-        <div class="section-title">{icon} {section_title}</div>
+    <div class="upload-section-upload-section">
+        <div class="section-title-upload-section">{icon} {section_title}</div>
     </div>
     """, unsafe_allow_html=True)
     
@@ -288,13 +196,13 @@ def upload_section(section_title, section_key, icon):
             if uploaded_file.name not in [f.name for f in st.session_state[f"uploaded_files_{section_key}"]]:
                 st.session_state[f"uploaded_files_{section_key}"].append(uploaded_file)
                 st.markdown(f"""
-                <div class="success-message">
+                <div class="success-message-upload-section">
                     ✅ File '{uploaded_file.name}' uploaded successfully!
                 </div>
                 """, unsafe_allow_html=True)
             else:
                 st.markdown(f"""
-                <div class="warning-message">
+                <div class="warning-message-upload-section">
                     ⚠️ File '{uploaded_file.name}' is already uploaded.
                 </div>
                 """, unsafe_allow_html=True)
@@ -392,32 +300,32 @@ def upload():
     # Compare datasets if both are uploaded
     if 'df1' in locals() and 'df2' in locals() and df1 is not None and df2 is not None:
         st.markdown("---")
-        st.markdown('<div class="section-title">🔗 Dataset Comparison</div>', unsafe_allow_html=True)
+        st.markdown('<div class="section-title-upload-section">🔗 Dataset Comparison</div>', unsafe_allow_html=True)
         
         comp_col1, comp_col2, comp_col3 = st.columns(3)
         
         with comp_col1:
             st.markdown(f"""
-            <div class="stats-card">
-                <p class="metric-value">{abs(len(df1) - len(df2))}</p>
-                <p class="metric-label">Row Difference</p>
+            <div class="stats-card-upload-section">
+                <p class="metric-value-upload-section">{abs(len(df1) - len(df2))}</p>
+                <p class="metric-label-upload-section">Row Difference</p>
             </div>
             """, unsafe_allow_html=True)
         
         with comp_col2:
             st.markdown(f"""
-            <div class="stats-card">
-                <p class="metric-value">{abs(len(df1.columns) - len(df2.columns))}</p>
-                <p class="metric-label">Column Difference</p>
+            <div class="stats-card-upload-section">
+                <p class="metric-value-upload-section">{abs(len(df1.columns) - len(df2.columns))}</p>
+                <p class="metric-label-upload-section">Column Difference</p>
             </div>
             """, unsafe_allow_html=True)
         
         with comp_col3:
             common_cols = len(set(df1.columns) & set(df2.columns))
             st.markdown(f"""
-            <div class="stats-card">
-                <p class="metric-value">{common_cols}</p>
-                <p class="metric-label">Common Columns</p>
+            <div class="stats-card-upload-section">
+                <p class="metric-value-upload-section">{common_cols}</p>
+                <p class="metric-label-upload-section">Common Columns</p>
             </div>
             """, unsafe_allow_html=True)
         

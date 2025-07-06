@@ -45,9 +45,6 @@ elif page == "Data Analysis":
 elif page == "Upload":
     upload_page.upload()  # Load the file upload page  # If nothing is uploaded, prompt the user
 
-elif page == "Mars Weather":
-    mars_weather.render_mars_weather_page()  # Show live Mars weather page
-
 else:
     notfoundpage.notfound()  # If the page doesn't exist, show a "Not Found" message
 

@@ -56,3 +56,102 @@
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
 }
+
+.main-header-upload-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-title-upload-section {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header-subtitle-upload-section {
+    color: #f0f0f0;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.upload-section-upload-section {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px dashed #e9ecef;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.upload-section-upload-section:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.section-title-upload-section {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stats-card-upload-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-left: 4px solid #667eea;
+    margin: 0.5rem 0;
+}
+
+.metric-value-upload-section {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.metric-label-upload-section {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.file-item-upload-section {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.success-message-upload-section {
+    background: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    margin: 1rem 0;
+}
+
+.warning-message-upload-section {
+    background: #fff3cd;
+    color: #856404;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ffeaa7;
+    margin: 1rem 0;
+}
