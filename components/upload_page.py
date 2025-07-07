@@ -340,9 +340,9 @@ def upload_section(section_title, section_key):
 def save_to_database(df, file_name, section_key):
     file_name_without_ext = os.path.splitext(file_name)[0]
     db_name = f"{file_name_without_ext}_{section_key}.duckdb"
-    if section_key is "temp":
+    if section_key == "temp":
         db_path = os.path.join("data", "data_temp", db_name)
-    elif section_key is "surface":
+    elif section_key == "surface":
         db_path = os.path.join("data", "data_surf", db_name)
     table_name = f"{file_name_without_ext}_{section_key}".replace(" ", "_").replace("-", "_")
 
