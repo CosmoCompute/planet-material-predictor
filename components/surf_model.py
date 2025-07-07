@@ -1,4 +1,4 @@
-from tensorflow import keras
+"""from tensorflow import keras
 import streamlit as st
 import numpy as np
 import gdown
@@ -34,3 +34,4 @@ predicted_class = np.argmax(prediction, axis=1)[0]
 predicted_material = material_labels[predicted_class]
 
 print("🪨 Predicted Material:", predicted_material)
+"""
