@@ -25,13 +25,15 @@ def about_us():
         "https://avatars.githubusercontent.com/u/143516210?v=4"
     ]
 
+    st.markdown("""<br>""", unsafe_allow_html=True)
+
     for i, member in enumerate(team_members):
         with st.container():
             col1, col2 = st.columns([1, 3])
             with col1:
                 st.markdown(f"""
                 <div style="width: 120px; height: 120px; border-radius: 50%; 
-                       background: {profile[i]}; 
+                       background: url("{profile[i]}"); 
                        display: flex; align-items: center; justify-content: center;">
                 </div>
                 """, unsafe_allow_html=True)
