@@ -381,3 +381,13 @@
     margin: 2rem 0;
     opacity: 0.7;
 }
+
+.about-section-header {
+    color: #2E86AB;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #2E86AB;
+    padding-bottom: 0.5rem;
+}

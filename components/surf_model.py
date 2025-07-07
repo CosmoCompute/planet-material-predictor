@@ -20,7 +20,7 @@ model = load_model()
 print("✅ Model loaded successfully!")
 
 # Example prediction
-sample = np.array([[2.61, 0.32, 175]])
+sample = np.array([[5.6, 0.62, 215]])
 prediction = model.predict(sample)
 
 # Decode prediction
@@ -33,5 +33,4 @@ material_labels = [
 predicted_class = np.argmax(prediction, axis=1)[0]
 predicted_material = material_labels[predicted_class]
 
-print("🪨 Predicted Material:", predicted_material)
-"""
+print("🪨 Predicted Material:", predicted_material)"""
