@@ -1,6 +1,6 @@
 import streamlit as st  
 # Importing custom-built components like the sidebar, page handlers, and utilities.
-from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis, surf_model
+from components import *
 from utils import db_utils  # Utility functions for database (if used)
 
 # Setting the basic layout and configuration of the web page.
@@ -46,6 +46,9 @@ elif page == "Data Analysis":
 
 elif page == "Upload":
     upload_page.upload()  # Load the file upload page  # If nothing is uploaded, prompt the user
+
+elif page == "About Team":
+    about_page.about_us()
 
 else:
     notfoundpage.notfound()  # If the page doesn't exist, show a "Not Found" message
