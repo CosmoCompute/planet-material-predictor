@@ -8,3 +8,4 @@ pandas
 seaborn
 scikit-learn
 plotly
+tensorflow==2.15.0
