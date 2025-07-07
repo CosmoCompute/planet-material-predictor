@@ -342,7 +342,7 @@ def save_to_database(df, file_name, section_key):
     db_name = f"{file_name_without_ext}_{section_key}.duckdb"
     if section_key is "temp":
         db_path = os.path.join("data", "data_temp", db_name)
-    elif section_key is "surf":
+    elif section_key is "surface":
         db_path = os.path.join("data", "data_surf", db_name)
     table_name = f"{file_name_without_ext}_{section_key}".replace(" ", "_").replace("-", "_")
 
