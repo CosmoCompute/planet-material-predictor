@@ -36,16 +36,16 @@ st.markdown("""
 
 # Depending on what the user selects from the sidebar, show the correct page
 
-if page is "Home":
+if page == "Home":
     st.title("Home")  # Simple placeholder title for the homepage
 
-elif page is "material-prediction-model":
+elif page == "Surface Material Prediction":
     st.subheader("model is in under process")
 
-elif page is "Data Analysis":
+elif page == "Data Analysis":
     data_analysis.main()  # Run the Data Analysis module when selected
 
-elif page is "Upload":
+elif page == "Upload":
     upload_page.upload()  # Load the file upload page  # If nothing is uploaded, prompt the user
 
 else:

@@ -10,7 +10,7 @@ def create_sidebar():
     pages = {
         "🏠 Home": "Home",
         "📊 Data Analysis": "Data Analysis",
-        "🪨 Surface Material Prediction":"material-prediction-model",
+        "🪨 Surface Material Prediction": "Surface Material Prediction",
         "📤 Upload": "Upload",
         "👥 About Team": "About Team"
     }
