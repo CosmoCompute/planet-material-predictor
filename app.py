@@ -1,7 +1,6 @@
 import streamlit as st  
-
 # Importing custom-built components like the sidebar, page handlers, and utilities.
-from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis
+from components import app_sidebar, local_def, upload_page, notfoundpage, data_analysis, surf_model
 from utils import db_utils  # Utility functions for database (if used)
 
 # Setting the basic layout and configuration of the web page.
@@ -40,7 +39,7 @@ if page == "Home":
     st.title("Home")  # Simple placeholder title for the homepage
 
 elif page == "Surface Material Prediction":
-    st.subheader("model is in under process")
+    surf_model.material_prediction()
 
 elif page == "Data Analysis":
     data_analysis.main()  # Run the Data Analysis module when selected
