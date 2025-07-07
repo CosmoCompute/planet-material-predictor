@@ -32,9 +32,13 @@ def about_us():
             col1, col2 = st.columns([1, 3])
             with col1:
                 st.markdown(f"""
-                <div style="width: 120px; height: 120px; border-radius: 50%; 
-                       background: url("{profile[i]}"); 
-                       display: flex; align-items: center; justify-content: center;">
+                <div style="width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background-image: url('{profile[i]}');
+                background-size: cover;
+                background-position: center;
+                overflow: hidden;">
                 </div>
                 """, unsafe_allow_html=True)
         
