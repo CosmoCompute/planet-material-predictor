@@ -267,3 +267,117 @@
     color: #666;
     margin-top: 5px;
 }
+
+    .not-found-container {
+        text-align: center;
+        padding: 3rem 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .error-code {
+        font-size: 8rem;
+        font-weight: 800;
+        color: #ff6b6b;
+        margin: 0;
+        line-height: 1;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .error-title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 1rem 0;
+    }
+    
+    .error-message {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        margin: 1.5rem 0;
+        line-height: 1.6;
+    }
+    
+    .search-container {
+        margin: 2rem 0;
+    }
+    
+    .helpful-links {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 4px solid #3498db;
+    }
+    
+    .helpful-links h4 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+    }
+    
+    .link-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .link-card {
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+    
+    .link-card:hover {
+        transform: translateY(-2px);
+    }
+    
+    .icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .back-button {
+        background: linear-gradient(45deg, #3498db, #2980b9);
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin: 1rem 0.5rem;
+    }
+    
+    .back-button:hover {
+        background: linear-gradient(45deg, #2980b9, #3498db);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .contact-button {
+        background: linear-gradient(45deg, #27ae60, #2ecc71);
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin: 1rem 0.5rem;
+    }
+    
+    .contact-button:hover {
+        background: linear-gradient(45deg, #2ecc71, #27ae60);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+.illustration {
+    margin: 2rem 0;
+    opacity: 0.7;
+}
