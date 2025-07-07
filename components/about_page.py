@@ -44,9 +44,8 @@ def about_us():
                     <p style="margin-bottom: 1rem;">{member['bio']}</p>
                     <div class="contact-info">
                         <strong>Contact:</strong><br>
-                        📧 {member['email']}<br>
-                        💼 <a href="{member['linkedin']}" target="_blank">LinkedIn Profile</a><br>
-                        🐙 <a href="{member['github']}" target="_blank">GitHub Profile</a>
+                        {member['email']}<br>
+                        <a href="{member['github']}" target="_blank">GitHub Profile</a>
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
