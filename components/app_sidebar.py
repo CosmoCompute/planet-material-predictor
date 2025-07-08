@@ -9,7 +9,7 @@ def create_sidebar():
     # Define display names and internal page values
     pages = {
         "🏠 Home": "Home",
-        "📊 Data Analysis": "Data Analysis",
+        "🌡 Temperature Analysis": "Data Analysis",
         "🪨 Surface Material Prediction": "Surface Material Prediction",
         "📤 Upload": "Upload",
         "👥 About Team": "About Team"

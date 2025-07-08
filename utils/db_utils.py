@@ -3,7 +3,7 @@ import os
 
 def load_db(file_name):
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    data_path = os.path.join(project_root, 'data/data-temp/', file_name)
+    data_path = os.path.join(project_root, 'data/data_temp/', file_name)
 
     if not os.path.isfile(data_path):
         raise FileNotFoundError(f"Database file not found: {data_path}")

@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 
 # Directory setup
 MODEL_DIR = 'models'
-DATA_DIR = 'data'
+DATA_DIR = 'data/data_temp'
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, '..'))
 sys.path.append(project_root)
