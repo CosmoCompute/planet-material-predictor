@@ -28,7 +28,7 @@ from models.temp_model import load_model
 
 def load_and_prepare_data():
     try:
-        directory = Path("data/")
+        directory = Path("data/data_temp/")
         file_dict = {f.stem: f.name for f in directory.iterdir() if f.is_file()}
         selected_name = st.selectbox("Select a file:", list(file_dict.keys()))
 
