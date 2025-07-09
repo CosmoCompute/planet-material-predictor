@@ -109,8 +109,8 @@ def predict_rock_type(scaler, model, le, velocity, amplitude, duration, frequenc
     return pred_label, confidence, pred_prob[0]
 
 def material_prediction():
-    V_venus = 4.5       # km/s
-    A_venus = 0.40       # amplitude
+    V_venus = 5.5       # km/s
+    A_venus = 0.60       # amplitude
     D_venus = 300       # ms
     f_venus = 30        # Hz
 
@@ -146,6 +146,16 @@ def material_prediction():
         ig_model=keras.models.load_model("models/igneous_model.keras")
         ig_scaler=joblib.load("models/igneous_scaler.pkl")
         ig_le=joblib.load("models/igneous_label_encoder.pkl")
+        rock_type, confidence, probabilities = predict_rock_type(
+            ig_scaler, ig_model, ig_le,V_earth, A_earth, D_earth, f_earth
+        )
+
+        st.write(f"\nFinal Result: {rock_type} (Confidence: {confidence:.3f})")
+    
+    elif predicted_label == "metamorphic_rocks":
+        ig_model=keras.models.load_model("models/metamorphic_model.keras")
+        ig_scaler=joblib.load("models/metamorphic_scaler.pkl")
+        ig_le=joblib.load("models/metamorphic_label_encoder.pkl")
         rock_type, confidence, probabilities = predict_rock_type(
             ig_scaler, ig_model, ig_le,V_earth, A_earth, D_earth, f_earth
         )
