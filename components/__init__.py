@@ -1,1 +1,1 @@
-__all__ = ["app_sidebar", "local_def", "upload_page", "notfoundpage", "data_analysis", "surf_model", "about_page"]
+__all__ = ["app_sidebar", "local_def", "upload_page", "notfoundpage", "data_analysis", "surf_model", "about_page", "home_page"]

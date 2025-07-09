@@ -1,9 +1,12 @@
 import duckdb
 import os
 
-def load_db(file_name):
+def load_db(file_name, session_key):
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    data_path = os.path.join(project_root, 'data/data_temp/', file_name)
+    if session_key == "temp":
+        data_path = os.path.join(project_root, 'data/data_temp/', file_name)
+    elif session_key == "surf":
+        data_path = os.path.join(project_root, 'data/data_surf/', file_name)
 
     if not os.path.isfile(data_path):
         raise FileNotFoundError(f"Database file not found: {data_path}")

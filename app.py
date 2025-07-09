@@ -36,7 +36,7 @@ st.markdown("""
 # Depending on what the user selects from the sidebar, show the correct page
 
 if page == "Home":
-    st.title("Home")  # Simple placeholder title for the homepage
+    home_page.home()  # Simple placeholder title for the homepage
 
 elif page == "Surface Material Prediction":
     surf_model.material_prediction()

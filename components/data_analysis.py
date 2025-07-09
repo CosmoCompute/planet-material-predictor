@@ -33,7 +33,7 @@ def load_and_prepare_data():
         selected_name = st.selectbox("Select a file:", list(file_dict.keys()))
 
         file_name = file_dict[selected_name]
-        df = db_utils.load_db(file_name)
+        df = db_utils.load_db(file_name, "temp")
         df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
         df.set_index('Date', inplace=True)
         df = df.sort_index()
