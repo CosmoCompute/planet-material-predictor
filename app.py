@@ -41,8 +41,8 @@ if page == "Home":
 elif page == "Surface Material Prediction":
     surf_model.material_prediction()
 
-elif page == "Data Analysis":
-    data_analysis.main()  # Run the Data Analysis module when selected
+elif page == "temp Analysis":
+    temp_model.main()  # Run the Data Analysis module when selected
 
 elif page == "Upload":
     upload_page.upload()  # Load the file upload page  # If nothing is uploaded, prompt the user
