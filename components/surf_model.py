@@ -4,12 +4,6 @@ from tensorflow import keras
 import joblib
 import math
 
-def prediction(session_key, ):
-    if session_key == "igneous_rocks":
-
-    else:
-        st.write("Unknown material identified.")
-
 def material_prediction():
     model=keras.models.load_model("models/model.h5")
     scaler = joblib.load("models/scaler.pkl")
