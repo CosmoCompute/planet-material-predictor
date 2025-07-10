@@ -415,7 +415,7 @@ def upload():
     
     if planet_name:
         safe_name = re.sub(r'[^a-zA-Z0-9_-]', '_', planet_name.strip())
-        DB_PATH = Path(f"data/{safe_name}.db")
+        DB_PATH = Path(f"data/label/{safe_name}_surface.duckdb")
         DB_PATH.parent.mkdir(parents=True, exist_ok=True)
         with duckdb.connect(DB_PATH) as con:
             con.execute("""
