@@ -45,7 +45,7 @@ elif page == "Upload":
     upload_page.upload()
 
 elif page == "Surface Material Prediction":
-    surf_model.main()
+    surf_model.material_prediction()
    
 elif page == "temp Analysis":
     temp_model.main()  # Run the Data Analysis module when selected
