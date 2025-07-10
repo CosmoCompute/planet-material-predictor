@@ -35,17 +35,20 @@ st.markdown("""
 
 # Depending on what the user selects from the sidebar, show the correct page
 
+g_planet = None
+phi_planet = None # Initialize with None
+
 if page == "Home":
-    home_page.home()  # Simple placeholder title for the homepage
+    home_page.home()
+
+elif page == "Upload":
+    upload_page.upload()
 
 elif page == "Surface Material Prediction":
     surf_model.material_prediction()
-
+   
 elif page == "temp Analysis":
     temp_model.main()  # Run the Data Analysis module when selected
-
-elif page == "Upload":
-    upload_page.upload()  # Load the file upload page  # If nothing is uploaded, prompt the user
 
 elif page == "About Team":
     about_page.about_us()

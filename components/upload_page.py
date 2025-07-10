@@ -8,6 +8,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from components import app_sidebar, local_def
+from pathlib import Path
+import re
 
 local_def.load_css("assets/style.css")
 
@@ -250,7 +252,7 @@ def upload_section(section_title, section_key):
             </div>
         </div>
     """, unsafe_allow_html=True)
-
+    st.subheader("Upload the CSV")
     if f"uploaded_files_{section_key}" not in st.session_state:
         st.session_state[f"uploaded_files_{section_key}"] = []
 
@@ -375,19 +377,86 @@ def display_uploaded_files(section_title, section_key):
                         st.session_state[f"uploaded_files_{section_key}"].pop(i)
                         st.rerun() 
                 st.markdown("---")
+
+def init_db(DB_PATH):
+    with duckdb.connect(DB_PATH) as con:
+        con.execute("""
+            CREATE TABLE IF NOT EXISTS planet_parameters (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                g_force DOUBLE,
+                phi_index DOUBLE,
+                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+
+def insert_planet_data(g_force, phi_index, DB_PATH):
+    try:
+        g_force = float(g_force)
+        phi_index = float(phi_index)
+    except ValueError:
+        raise ValueError("Both g_force and phi_index must be numeric.")
+    
+    with duckdb.connect(DB_PATH) as con:
+        con.execute("""
+            INSERT INTO planet_parameters (g_force, phi_index)
+            VALUES (?, ?)
+        """, (g_force, phi_index))
+
+import duckdb
+from pathlib import Path
+import re
+
 def upload():
     header()
     app_sidebar.upload_page_sidebar()
     st.subheader("Data Upload & Analysis")
+
+    planet_name = st.text_input("Enter Planet Name (this will be your DB file name)")
+    
+    if planet_name:
+        safe_name = re.sub(r'[^a-zA-Z0-9_-]', '_', planet_name.strip())
+        DB_PATH = Path(f"data/{safe_name}.db")
+        DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with duckdb.connect(DB_PATH) as con:
+            con.execute("""
+                CREATE TABLE IF NOT EXISTS planet_parameters (
+                id BIGINT,
+                g_force DOUBLE,
+                phi_index DOUBLE,
+                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+
+    else:
+        DB_PATH = None
+        st.warning("Please enter a planet name to create or use the database.")
+
     col1, col2 = st.columns(2) 
+
     with col1:
         df1 = upload_section("Temperature Model Dataset", "temp")
     
     with col2:
         df2 = upload_section("Surface Model Dataset", "surface")
+        st.subheader("Enter your planet requirement data")
+        g_planet = st.text_input("Enter the G-force of your planet")
+        phi_index = st.text_input("Enter the phi index of your planet")
+
+    if DB_PATH and g_planet and phi_index:
+        try:
+            g = float(g_planet)
+            phi = float(phi_index)
+            with duckdb.connect(DB_PATH) as con:
+                con.execute("""
+                    INSERT INTO planet_parameters (g_force, phi_index)
+                    VALUES (?, ?)
+                """, (g, phi))
+            st.success(f"Planetary data saved to database '{safe_name}.duckdb'!")
+        except ValueError:
+            st.error("Please enter valid numeric values for G-force and Phi index.")
 
     if df1 is not None or df2 is not None:
-        st.markdown("Additional Tools") 
+        st.markdown("### Additional Tools") 
         col1, col2, col3 = st.columns(3)
         with col1:
             if st.button("Generate Report", help="Generate a comprehensive analysis report"):
@@ -400,7 +469,7 @@ def upload():
         with col3:
             if st.button("Refresh Analysis", help="Refresh the analysis with current settings"):
                 st.rerun()
-    
+
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; color: #7f8c8d; padding: 2rem;">

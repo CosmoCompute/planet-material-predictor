@@ -3,6 +3,7 @@ import numpy as np
 from tensorflow import keras
 import joblib
 import math
+from components import app_sidebar
 
 def scaling_factor(g_planet, g_earth, phi_planet, phi_earth, alpha=0.2, beta=0.5):
     """Common scaling factor based on gravity and porosity."""
@@ -94,36 +95,28 @@ def predict_rock_type(scaler, model, le, velocity, amplitude, duration, frequenc
     confidence = np.max(pred_prob)
 
     if verbose:
-        print(f"\n🪨 Input Sample:")
-        print(f"   Velocity: {velocity} km/s")
-        print(f"   Amplitude: {amplitude}")
-        print(f"   Duration: {duration} ms")
-        print(f"   Frequency: {frequency_hz} Hz")
-        print(f"\n📊 Prediction Results:")
-        print(f"   Predicted Rock Type: {pred_label}")
-        print(f"   Confidence: {confidence:.3f}")
-        print(f"\n📈 All Probabilities:")
         for i, rock_type in enumerate(le.classes_):
-            print(f"   {rock_type}: {pred_prob[0][i]:.3f}")
+            st.write(f"   {rock_type}: {pred_prob[0][i]:.3f}")
 
     return pred_label, confidence, pred_prob[0]
 
 def material_prediction():
+    app_sidebar.surface_material_page_sidebar()
     V_venus = 5.5       # km/s
     A_venus = 0.60       # amplitude
     D_venus = 300       # ms
     f_venus = 30        # Hz
 
-    g_venus = 3.73      # m/s^2
+    g_planet = 3.73      # m/s^2
     g_earth = 9.81      # m/s^2
-    phi_venus = 0.18
+    phi_planet = 0.18
     phi_earth = 0.10
 
 # Convert all properties
-    V_earth = convert_velocity_to_earth(V_venus, g_venus, g_earth, phi_venus, phi_earth)
-    A_earth = convert_amplitude_to_earth(A_venus, g_venus, g_earth, phi_venus, phi_earth)
-    D_earth = convert_duration_to_earth(D_venus, g_venus, g_earth, phi_venus, phi_earth)
-    f_earth = convert_frequency_to_earth(f_venus, g_venus, g_earth, phi_venus, phi_earth)
+    V_earth = convert_velocity_to_earth(V_venus, g_planet, g_earth, phi_planet, phi_earth)
+    A_earth = convert_amplitude_to_earth(A_venus, g_planet, g_earth, phi_planet, phi_earth)
+    D_earth = convert_duration_to_earth(D_venus, g_planet, g_earth, phi_planet, phi_earth)
+    f_earth = convert_frequency_to_earth(f_venus, g_planet, g_earth, phi_planet, phi_earth)
 
     sample = np.array([V_earth, A_earth, D_earth])
 

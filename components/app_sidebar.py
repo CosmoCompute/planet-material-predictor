@@ -163,3 +163,11 @@ def upload_page_sidebar():
     })
     
     return st.session_state.analysis_settings
+
+def surface_material_page_sidebar():
+    st.sidebar.markdown("""
+        <div class="sidebar-section">
+            <h3>🎛️ Analysis Settings</h3>
+            <p style="margin: 0; font-size: 14px;">Configure your data analysis preferences</p>
+        </div>
+    """, unsafe_allow_html=True)
