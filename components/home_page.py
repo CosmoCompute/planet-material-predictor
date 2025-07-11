@@ -7,7 +7,7 @@ def home():
 
     # Optional: Load and display a banner image
     banner = "https://images.unsplash.com/photo-1581090700227-1e7eafee7f81?fit=crop&w=1920&q=80"
-    st.image(banner, use_column_width=True)
+    st.image(banner, use_container_width=True)
 
     # Custom title styling
     st.markdown("""
