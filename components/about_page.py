@@ -18,6 +18,15 @@ def about_us():
             "bio": "B.Sc Student at University of Calcutta in Computer Science",
             "github": "https://github.com/student-Arijit",
             "email": "arijitchowdhury4467@gmail.com" 
+        },
+
+        {
+            "name": "Swarnabha Halder",
+            "role": "Co-Leader",
+            "contribution": "UI, Data Analysis, Model-training, Logic Building",
+            "bio": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technology ",
+            "github": "https://github.com/swarnabha-dev",
+            "email": "swarnabhahalder80137@gmail.com"
         }
     ]
 
