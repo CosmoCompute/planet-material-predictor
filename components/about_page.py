@@ -54,8 +54,8 @@ def about_us():
             with col2:
                 st.markdown(f"""
                 <div class="team-card">
-                    <h3 style="color: #2E86AB; margin-bottom: 0.5rem;">{member['name']}</h3>
-                    <h4 style="color: #666; margin-bottom: 1rem;">{member['role']}</h4>
+                    <h3 style="color: #FFFF; margin-bottom: 0.5rem;">{member['name']}</h3>
+                    <h4 style="color: #FFFF; margin-bottom: 1rem;">{member['role']}</h4>
                     <p style="margin-bottom: 1rem;">{member['bio']}</p>
                     <div class="contact-info">
                         <strong>Contact:</strong><br>
