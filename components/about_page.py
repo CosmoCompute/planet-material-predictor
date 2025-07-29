@@ -1,9 +1,15 @@
 import streamlit as st
 import os
+import base64
 from components import local_def
 
 # Load your custom CSS
 local_def.load_css("assets/style.css")
+
+# Helper to base64-encode local image
+def encode_image_to_base64(path):
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
 def about_us():
     st.markdown("""
@@ -31,52 +37,42 @@ def about_us():
         }
     ]
 
-    # Mix of GitHub avatar (URL) and local image path
+    # Mixed source: URL + local image
     profile = [
-        "https://avatars.githubusercontent.com/u/143516210?v=4",  # Remote image
-        "assets/team/10001314851.jpg"  # Local image
+        "https://avatars.githubusercontent.com/u/143516210?v=4",  # Remote
+        "assets/team/10001314851.jpg"  # Local
     ]
 
-    st.markdown("""<br>""", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
     for i, member in enumerate(team_members):
         try:
             image_src = profile[i]
         except IndexError:
-            image_src = "https://via.placeholder.com/120"  # Safe fallback
+            image_src = "https://via.placeholder.com/120"
 
         with st.container():
             col1, col2 = st.columns([1, 3])
             with col1:
+                # Render image with consistent class
                 if image_src.startswith("http"):
-                    # Use background-image for URL
                     st.markdown(f"""
-                    <div style="
-                        width: 120px;
-                        height: 120px;
-                        border-radius: 50%;
-                        background-image: url('{image_src}');
-                        background-size: cover;
-                        background-position: center;
-                        overflow: hidden;
-                        border: 2px solid white;
-                        margin-top: 10px;
-                    ">
-                    </div>
+                    <img src="{image_src}" class="profile-photo"/>
+                    """, unsafe_allow_html=True)
+                elif os.path.exists(image_src):
+                    encoded = encode_image_to_base64(image_src)
+                    st.markdown(f"""
+                    <img src="data:image/jpeg;base64,{encoded}" class="profile-photo"/>
                     """, unsafe_allow_html=True)
                 else:
-                    # Render local file using st.image, or fallback if missing
-                    if os.path.exists(image_src):
-                        st.image(image_src, width=120)
-                    else:
-                        st.image("https://via.placeholder.com/120", width=120)
+                    st.image("https://via.placeholder.com/120", width=120)
 
             with col2:
                 st.markdown(f"""
                 <div class="team-card">
-                    <h3 style="color: #FFFF; margin-bottom: 0.5rem;">{member['name']}</h3>
-                    <h4 style="color: #FFFF; margin-bottom: 1rem;">{member['role']}</h4>
-                    <p style="margin-bottom: 1rem;">{member['bio']}</p>
+                    <h3>{member['name']}</h3>
+                    <h4>{member['role']}</h4>
+                    <p>{member['bio']}</p>
                     <div class="contact-info">
                         <strong>Contact:</strong><br>
                         {member['email']}<br>
