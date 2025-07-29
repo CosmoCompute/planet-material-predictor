@@ -34,7 +34,7 @@ def about_us():
     # Mix of GitHub avatar (URL) and local image path
     profile = [
         "https://avatars.githubusercontent.com/u/143516210?v=4",  # Remote image
-        "assets/team/DPP40269.jpg"  # Local image
+        "assets/team/1000131485.jpg"  # Local image
     ]
 
     st.markdown("""<br>""", unsafe_allow_html=True)
