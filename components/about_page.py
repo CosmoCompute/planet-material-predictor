@@ -12,7 +12,7 @@ def about_us():
         </h2>
     """, unsafe_allow_html=True)
 
-    team_members=[
+    team_members = [
         {
             "name": "Arijit Chowdhury",
             "role": "Leader",
@@ -21,7 +21,6 @@ def about_us():
             "github": "https://github.com/student-Arijit",
             "email": "arijitchowdhury4467@gmail.com" 
         },
-
         {
             "name": "Swarnabha Halder",
             "role": "Co-Leader",
@@ -34,20 +33,23 @@ def about_us():
 
     # Mix of GitHub avatar (URL) and local image path
     profile = [
-        "https://avatars.githubusercontent.com/u/143516210?v=4",  # URL image
+        "https://avatars.githubusercontent.com/u/143516210?v=4",  # Remote image
         "assets/team/DPP40269.jpg"  # Local image
     ]
 
     st.markdown("""<br>""", unsafe_allow_html=True)
 
     for i, member in enumerate(team_members):
-        image_src = profile[i] if i < len(profile) else "https://via.placeholder.com/120"
+        try:
+            image_src = profile[i]
+        except IndexError:
+            image_src = "https://via.placeholder.com/120"  # Safe fallback
 
         with st.container():
             col1, col2 = st.columns([1, 3])
             with col1:
-                # If image is a URL → use CSS background-image
                 if image_src.startswith("http"):
+                    # Use background-image for URL
                     st.markdown(f"""
                     <div style="
                         width: 120px;
@@ -62,8 +64,8 @@ def about_us():
                     ">
                     </div>
                     """, unsafe_allow_html=True)
-                # Else use local image via st.image()
                 else:
+                    # Render local file using st.image, or fallback if missing
                     if os.path.exists(image_src):
                         st.image(image_src, width=120)
                     else:
@@ -82,8 +84,3 @@ def about_us():
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
-
-
-    
-
-   
