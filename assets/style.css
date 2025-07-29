@@ -373,22 +373,45 @@
 }
 
 .about-section-header {
-    color: #2E86AB;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 3px solid #2E86AB;
-    padding-bottom: 0.5rem;
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 600;
 }
 
 .team-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-    border-left: 4px solid #2E86AB;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.team-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Contact Info */
+.team-card .contact-info {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+.team-card a {
+    color: #00c6ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.team-card a:hover {
+    text-decoration: underline;
 }
     
 .company-info {
@@ -398,4 +421,21 @@
     border-radius: 15px;
     margin: 2rem 0;
     text-align: center;
+}
+
+.profile-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 10px auto;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
 }
