@@ -1,6 +1,8 @@
 import streamlit as st
+import os
 from components import local_def
 
+# Load your custom CSS
 local_def.load_css("assets/style.css")
 
 def about_us():
@@ -30,27 +32,43 @@ def about_us():
         }
     ]
 
-    profile=[
-        "https://avatars.githubusercontent.com/u/143516210?v=4"
+    # Mix of GitHub avatar (URL) and local image path
+    profile = [
+        "https://avatars.githubusercontent.com/u/143516210?v=4",  # URL image
+        "assets/team/member2.jpg"  # Local image
     ]
 
     st.markdown("""<br>""", unsafe_allow_html=True)
 
     for i, member in enumerate(team_members):
+        image_src = profile[i] if i < len(profile) else "https://via.placeholder.com/120"
+
         with st.container():
             col1, col2 = st.columns([1, 3])
             with col1:
-                st.markdown(f"""
-                <div style="width: 120px;
-                height: 120px;
-                border-radius: 50%;
-                background-image: url('{profile[i]}');
-                background-size: cover;
-                background-position: center;
-                overflow: hidden;">
-                </div>
-                """, unsafe_allow_html=True)
-        
+                # If image is a URL → use CSS background-image
+                if image_src.startswith("http"):
+                    st.markdown(f"""
+                    <div style="
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                        background-image: url('{image_src}');
+                        background-size: cover;
+                        background-position: center;
+                        overflow: hidden;
+                        border: 2px solid white;
+                        margin-top: 10px;
+                    ">
+                    </div>
+                    """, unsafe_allow_html=True)
+                # Else use local image via st.image()
+                else:
+                    if os.path.exists(image_src):
+                        st.image(image_src, width=120)
+                    else:
+                        st.image("https://via.placeholder.com/120", width=120)
+
             with col2:
                 st.markdown(f"""
                 <div class="team-card">
@@ -64,3 +82,8 @@ def about_us():
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
+
+
+    
+
+   
