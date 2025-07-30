@@ -27,14 +27,14 @@ def about_us():
         {
             "name": "Swarnabha Halder",
             "role": "CO-LEADER",
-            "description": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technolog \n contribution: UI, Data Analysis, Model-training, Logic Building\ngithub: https://github.com/swarnabha-dev\nemail: h.swarnabha@gmail.com",
+            "description": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technolog.<br>contribution: UI, Data Analysis, Model-training, Logic Building.<br>github: https://github.com/swarnabha-dev.<br>email: h.swarnabha@gmail.com",
             "image_path": "assets/team/10001314851.jpg",
             "bg_color": "#fdbb2d" # Yellow
         },
         {
             "name": "Arijit Chowdhury",
             "role": "Leader",
-            "description": "B.Sc Student at University of Calcutta in Computer Science.\ncontribution: Frontend->UI, Data Analysis, Data visualization, Backend-> logic-building, Model-training, Logic-building, Database-Management\ngithub: https://github.com/student-Arijit\nemail: arijitchowdhury4467@gmail.com",
+            "description": "B.Sc Student at University of Calcutta in Computer Science.<br>contribution: Frontend->UI, Data Analysis, Data visualization, Backend-> logic-building, Model-training, Logic-building, Database-Management.<br>github: https://github.com/student-Arijit.<br>email: arijitchowdhury4467@gmail.com",
             "image_path": "https://avatars.githubusercontent.com/u/143516210?v=4",
             "bg_color": "#1fe6a8" # Green
         }
