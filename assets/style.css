@@ -392,95 +392,86 @@
 }
 
 
-/* General Styling */
-body {
-    background-color: #FFFFFF;
-}
-
-/* Center align the main title and subtitle */
-.main-title {
+/* Center-align the main headers from the markdown */
+div[data-testid="stMarkdownContainer"] h2, 
+div[data-testid="stMarkdownContainer"] p {
     text-align: center;
-    color: #172B4D; /* A dark blue color */
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-}
-
-.subtitle {
-    text-align: center;
-    color: #5E6C84; /* A lighter gray color */
-    font-family: 'Helvetica Neue', sans-serif;
-    margin-bottom: 30px;
 }
 
 /* Team Member Card Styling */
-.team-card {
+.team-member-card {
     text-align: center;
+    margin-bottom: 24px;
     padding: 10px;
-    transition: transform 0.2s;
 }
 
-.team-card h3 {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    color: #172B4D;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.team-card p.role {
-    margin: 0;
-    color: #5E6C84;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-}
-
-/* Image container for background color and hover effect */
+/* Image container for background color, aspect ratio, and hover effect */
 .image-container {
-    position: relative; /* This is crucial for the overlay */
-    width: 250px;
-    height: 250px;
-    margin: 0 auto; /* Center the image container */
-    border-radius: 15px; /* Rounded corners for the container */
-    overflow: hidden; /* Ensures the image stays within the rounded corners */
-}
-
-.profile-image {
+    position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: contain; /* 'cover' will crop, 'contain' will fit inside */
-    object-position: bottom;
-    transition: transform 0.3s ease-in-out;
+    padding-top: 100%; /* 1:1 Aspect Ratio - makes the height equal to the width */
+    margin: 0 auto 16px;
+    overflow: hidden;
+    border-radius: 8px; /* Optional: adds rounded corners */
 }
 
-/* The hover overlay */
-.overlay {
+/* The actual profile image */
+.profile-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-    color: white;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px; /* Match container's border radius */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
-/* Show the overlay on hover */
+/* Overlay for hover effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .4s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.65); /* Dark semi-transparent overlay */
+    cursor: pointer;
+}
+
+/* Show the overlay when hovering over the image container */
 .image-container:hover .overlay {
     opacity: 1;
 }
 
-.image-container:hover .profile-image {
-    transform: scale(1.05); /* Slightly zoom the image on hover */
+/* Text inside the overlay */
+.overlay-text {
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 15px;
+    width: 90%;
 }
 
-.description-text {
-    padding: 20px;
-    font-size: 15px;
-    font-family: 'Helvetica Neue', sans-serif;
+/* Member name and role styling */
+.member-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #172B4D; /* A dark blue color for the name */
+}
+
+.member-info p {
+    font-size: 0.9rem;
+    color: #5E6C84; /* A grey color for the role */
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
