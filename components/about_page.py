@@ -27,39 +27,39 @@ team_members = [
     {
         "name": "Mike Cannon-Brookes",
         "role": "Co-Founder & Co-CEO",
-        "image_path": os.path.join(ASSETS_DIR, "mike.png"), # Replace with your image paths
+        "image_path": os.path.join(ASSETS_DIR, "10001314851.jpg"), # Replace with your image paths
         "description": "Mike is a visionary leader driving our company's mission forward with passion and innovation.",
     },
-    {
-        "name": "Scott Farquhar",
-        "role": "Co-Founder & Co-CEO",
-        "image_path": os.path.join(ASSETS_DIR, "scott.png"),
-        "description": "Scott's strategic mindset and focus on culture have been instrumental in our growth and success.",
-    },
-    {
-        "name": "Sri Viswanath",
-        "role": "Chief Technology Officer",
-        "image_path": os.path.join(ASSETS_DIR, "sri.png"),
-        "description": "Sri leads our technology strategy, building robust and scalable platforms for the future.",
-    },
-    {
-        "name": "Anu Bharadwaj",
-        "role": "Head of Enterprise",
-        "image_path": os.path.join(ASSETS_DIR, "anu.png"),
-        "description": "Anu is dedicated to delivering exceptional value and solutions to our enterprise customers.",
-    },
-    {
-        "name": "Erika Fisher",
-        "role": "CAO & General Counsel",
-        "image_path": os.path.join(ASSETS_DIR, "erika.png"),
-        "description": "Erika oversees our administrative and legal functions, ensuring operational excellence.",
-    },
-    {
-        "name": "James Beer",
-        "role": "Chief Financial Officer",
-        "image_path": os.path.join(ASSETS_DIR, "james.png"),
-        "description": "James manages the financial health of the company, guiding our long-term economic strategy.",
-    },
+    # {
+    #     "name": "Scott Farquhar",
+    #     "role": "Co-Founder & Co-CEO",
+    #     "image_path": os.path.join(ASSETS_DIR, "scott.png"),
+    #     "description": "Scott's strategic mindset and focus on culture have been instrumental in our growth and success.",
+    # },
+    # {
+    #     "name": "Sri Viswanath",
+    #     "role": "Chief Technology Officer",
+    #     "image_path": os.path.join(ASSETS_DIR, "sri.png"),
+    #     "description": "Sri leads our technology strategy, building robust and scalable platforms for the future.",
+    # },
+    # {
+    #     "name": "Anu Bharadwaj",
+    #     "role": "Head of Enterprise",
+    #     "image_path": os.path.join(ASSETS_DIR, "anu.png"),
+    #     "description": "Anu is dedicated to delivering exceptional value and solutions to our enterprise customers.",
+    # },
+    # {
+    #     "name": "Erika Fisher",
+    #     "role": "CAO & General Counsel",
+    #     "image_path": os.path.join(ASSETS_DIR, "erika.png"),
+    #     "description": "Erika oversees our administrative and legal functions, ensuring operational excellence.",
+    # },
+    # {
+    #     "name": "James Beer",
+    #     "role": "Chief Financial Officer",
+    #     "image_path": os.path.join(ASSETS_DIR, "james.png"),
+    #     "description": "James manages the financial health of the company, guiding our long-term economic strategy.",
+    # },
 ]
 
 # --- PAGE LAYOUT ---
