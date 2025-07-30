@@ -398,8 +398,13 @@ div[data-testid="stMarkdownContainer"] > div:first-child > p {
     text-align: center;
 }
 
-/* --- Main Card Styling --- */
+/* --- Main Card Styling (UPDATED) --- */
 .team-member-card {
+    /* Set a max-width to make cards smaller */
+    max-width: 320px;
+    /* Center the card within its column */
+    margin: 0 auto 24px auto;
+
     text-align: center;
     padding: 20px 16px;
     border-radius: 12px;
@@ -421,7 +426,7 @@ div[data-testid="stMarkdownContainer"] > div:first-child > p {
 .image-container {
     width: 100%;
     padding-top: 100%; /* 1:1 Aspect Ratio */
-    margin: 0 auto 16px;
+    margin-bottom: 16px;
     overflow: hidden;
     position: relative;
     border-radius: 8px;
