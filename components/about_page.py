@@ -31,44 +31,44 @@ def about_us():
             "name": "Mike Cannon-Brookes",
             "role": "CO-FOUNDER & CO-CEO",
             "description": "Your short description for Mike. This text appears on hover.",
-            "image_path": "assets/team/mike.jpg",  # 👈 IMPORTANT: Replace with the actual path
-            "bg_color": "#fdbb2d" # Yellow
-        },
-        {
-            "name": "Scott Farquhar",
-            "role": "CO-FOUNDER & CO-CEO",
-            "description": "Your short description for Scott. This text appears on hover.",
-            "image_path": "assets/team/scott.jpg",  # 👈 IMPORTANT: Replace with the actual path
-            "bg_color": "#1fe6a8" # Green
-        },
-        {
-            "name": "Sri Viswanath",
-            "role": "CHIEF TECHNOLOGY OFFICER",
-            "description": "Your short description for Sri. This text appears on hover.",
-            "image_path": "assets/team/sri.jpg",    # 👈 IMPORTANT: Replace with the actual path
-            "bg_color": "#f6a7a6" # Pink
-        },
-        {
-            "name": "Anu Bharadwaj",
-            "role": "HEAD OF ENTERPRISE & CLOUD PLATFORM",
-            "description": "Your short description for Anu. This text appears on hover.",
-            "image_path": "assets/team/anu.jpg",    # 👈 IMPORTANT: Replace with the actual path
-            "bg_color": "#1fe6a8" # Green
-        },
-        {
-            "name": "Erika Fisher",
-            "role": "CHIEF ADMINISTRATIVE OFFICER",
-            "description": "Your short description for Erika. This text appears on hover.",
-            "image_path": "assets/team/erika.jpg",  # 👈 IMPORTANT: Replace with the actual path
-            "bg_color": "#2873f4" # Blue
-        },
-        {
-            "name": "James Beer",
-            "role": "CHIEF FINANCIAL OFFICER",
-            "description": "Your short description for James. This text appears on hover.",
-            "image_path": "assets/team/james.jpg",  # 👈 IMPORTANT: Replace with the actual path
+            "image_path": "assets/team/10001314851.jpg",  # 👈 IMPORTANT: Replace with the actual path
             "bg_color": "#fdbb2d" # Yellow
         }
+        # {
+        #     "name": "Scott Farquhar",
+        #     "role": "CO-FOUNDER & CO-CEO",
+        #     "description": "Your short description for Scott. This text appears on hover.",
+        #     "image_path": "assets/team/scott.jpg",  # 👈 IMPORTANT: Replace with the actual path
+        #     "bg_color": "#1fe6a8" # Green
+        # },
+        # {
+        #     "name": "Sri Viswanath",
+        #     "role": "CHIEF TECHNOLOGY OFFICER",
+        #     "description": "Your short description for Sri. This text appears on hover.",
+        #     "image_path": "assets/team/sri.jpg",    # 👈 IMPORTANT: Replace with the actual path
+        #     "bg_color": "#f6a7a6" # Pink
+        # },
+        # {
+        #     "name": "Anu Bharadwaj",
+        #     "role": "HEAD OF ENTERPRISE & CLOUD PLATFORM",
+        #     "description": "Your short description for Anu. This text appears on hover.",
+        #     "image_path": "assets/team/anu.jpg",    # 👈 IMPORTANT: Replace with the actual path
+        #     "bg_color": "#1fe6a8" # Green
+        # },
+        # {
+        #     "name": "Erika Fisher",
+        #     "role": "CHIEF ADMINISTRATIVE OFFICER",
+        #     "description": "Your short description for Erika. This text appears on hover.",
+        #     "image_path": "assets/team/erika.jpg",  # 👈 IMPORTANT: Replace with the actual path
+        #     "bg_color": "#2873f4" # Blue
+        # },
+        # {
+        #     "name": "James Beer",
+        #     "role": "CHIEF FINANCIAL OFFICER",
+        #     "description": "Your short description for James. This text appears on hover.",
+        #     "image_path": "assets/team/james.jpg",  # 👈 IMPORTANT: Replace with the actual path
+        #     "bg_color": "#fdbb2d" # Yellow
+        # }
     ]
 
     # --- RENDER TEAM MEMBERS IN A GRID ---
