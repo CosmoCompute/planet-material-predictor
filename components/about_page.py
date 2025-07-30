@@ -58,6 +58,36 @@ def about_us():
             "image_path": "assets/team/swarnabha.jpg", # 👈 IMPORTANT: Update path
             "bg_color": "#1fe6a8"
         },
+        {
+            "name": "Swarnabha Halder",
+            "role": "CO-LEADER",
+            "bio": "A B.Tech in Computer Science with a specialization in Data Science from SMIT.",
+            "contribution": "UI Design, Data Analysis, Model Training, & Core Logic Building.",
+            "github": "https://github.com/swarnabha-dev",
+            "email": "swarnabhahalder80137@gmail.com",
+            "image_path": "assets/team/swarnabha.jpg", # 👈 IMPORTANT: Update path
+            "bg_color": "#1fe6a8"
+        },
+        {
+            "name": "Swarnabha Halder",
+            "role": "CO-LEADER",
+            "bio": "A B.Tech in Computer Science with a specialization in Data Science from SMIT.",
+            "contribution": "UI Design, Data Analysis, Model Training, & Core Logic Building.",
+            "github": "https://github.com/swarnabha-dev",
+            "email": "swarnabhahalder80137@gmail.com",
+            "image_path": "assets/team/swarnabha.jpg", # 👈 IMPORTANT: Update path
+            "bg_color": "#1fe6a8"
+        },
+        {
+            "name": "Swarnabha Halder",
+            "role": "CO-LEADER",
+            "bio": "A B.Tech in Computer Science with a specialization in Data Science from SMIT.",
+            "contribution": "UI Design, Data Analysis, Model Training, & Core Logic Building.",
+            "github": "https://github.com/swarnabha-dev",
+            "email": "swarnabhahalder80137@gmail.com",
+            "image_path": "assets/team/swarnabha.jpg", # 👈 IMPORTANT: Update path
+            "bg_color": "#1fe6a8"
+        },
     ]
 
     # --- RENDER TEAM MEMBERS IN A GRID ---
