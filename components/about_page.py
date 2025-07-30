@@ -8,7 +8,7 @@ st.set_page_config(page_title="Our Team", page_icon="👥", layout="wide")
 # --- PATHS ---
 # Update this path to where your CSS file is located
 CSS_FILE = "assets/style.css" 
-ASSETS_DIR = "assets"
+IMAGE_DIR = "assets/team"
 
 # --- LOAD CSS ---
 def load_css(file_path):
@@ -27,7 +27,7 @@ team_members = [
     {
         "name": "Mike Cannon-Brookes",
         "role": "Co-Founder & Co-CEO",
-        "image_path": os.path.join(ASSETS_DIR, "10001314851.jpg"), # Replace with your image paths
+        "image_path": os.path.join(IMAGE_DIR, "10001314851.jpg"), # Replace with your image paths
         "description": "Mike is a visionary leader driving our company's mission forward with passion and innovation.",
     },
     # {
