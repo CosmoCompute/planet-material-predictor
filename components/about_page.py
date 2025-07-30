@@ -25,10 +25,11 @@ def about_us():
     # --- TEAM DATA (No changes here) ---
     team_members = [
         {
-            "name": "Mike Cannon-Brookes",
-            "role": "CO-FOUNDER & CO-CEO",
-            "description": "Your short description for Mike. This text appears on hover.",
-            "image_path": "assets/team/mike.jpg",
+            "name": "Swarnabha Halder",
+            "role": "CO-LEADER",
+            "description": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technology
+            contribution": "UI, Data Analysis, Model-training, Logic Building",
+            "image_path": "assets/team/10001314851.jpg.jpg",
             "bg_color": "#fdbb2d" # Yellow
         },
         {
