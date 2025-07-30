@@ -381,39 +381,7 @@
     font-weight: 600;
 }
 
-.team-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px 25px;
-    border-radius: 12px;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
-    color: #fff;
-}
-
-.team-card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-}
-
-/* Contact Info */
-.team-card .contact-info {
-    margin-top: 12px;
-    font-size: 0.95rem;
-    color: #ccc;
-}
-
-.team-card a {
-    color: #00c6ff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.team-card a:hover {
-    text-decoration: underline;
-}
-    
+   
 .company-info {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -423,19 +391,96 @@
     text-align: center;
 }
 
-.profile-photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block;
-    margin: 10px auto;
+
+/* General Styling */
+body {
+    background-color: #FFFFFF;
 }
 
-.profile-photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+/* Center align the main title and subtitle */
+.main-title {
+    text-align: center;
+    color: #172B4D; /* A dark blue color */
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+.subtitle {
+    text-align: center;
+    color: #5E6C84; /* A lighter gray color */
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 30px;
+}
+
+/* Team Member Card Styling */
+.team-card {
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+.team-card h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #172B4D;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.team-card p.role {
+    margin: 0;
+    color: #5E6C84;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+
+/* Image container for background color and hover effect */
+.image-container {
+    position: relative; /* This is crucial for the overlay */
+    width: 250px;
+    height: 250px;
+    margin: 0 auto; /* Center the image container */
+    border-radius: 15px; /* Rounded corners for the container */
+    overflow: hidden; /* Ensures the image stays within the rounded corners */
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 'cover' will crop, 'contain' will fit inside */
+    object-position: bottom;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* The hover overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    color: white;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px; /* Match container's border radius */
+}
+
+/* Show the overlay on hover */
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.image-container:hover .profile-image {
+    transform: scale(1.05); /* Slightly zoom the image on hover */
+}
+
+.description-text {
+    padding: 20px;
+    font-size: 15px;
+    font-family: 'Helvetica Neue', sans-serif;
 }
