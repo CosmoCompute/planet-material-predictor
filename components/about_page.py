@@ -1,82 +1,133 @@
 import streamlit as st
-import os
 import base64
-from components import local_def
+import os
 
-# Load your custom CSS
-local_def.load_css("assets/style.css")
+# --- PAGE CONFIG ---
+st.set_page_config(page_title="Our Team", page_icon="👥", layout="wide")
 
-# Helper to base64-encode local image
-def encode_image_to_base64(path):
-    with open(path, "rb") as f:
-        return base64.b64encode(f.read()).decode()
+# --- PATHS ---
+# Update this path to where your CSS file is located
+CSS_FILE = "assets/style.css" 
+ASSETS_DIR = "assets"
 
-def about_us():
-    st.markdown("""
-        <h2 class="about-section-header">
-           👥 Meet Our Team     
-        </h2>
-    """, unsafe_allow_html=True)
+# --- LOAD CSS ---
+def load_css(file_path):
+    with open(file_path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-    team_members = [
-        {
-            "name": "Arijit Chowdhury",
-            "role": "Leader",
-            "contribution": "Frontend->UI, Data Analysis, Data visualization, Backend-> logic-building, Model-training, Logic-building, Database-Management",
-            "bio": "B.Sc Student at University of Calcutta in Computer Science",
-            "github": "https://github.com/student-Arijit",
-            "email": "arijitchowdhury4467@gmail.com" 
-        },
-        {
-            "name": "Swarnabha Halder",
-            "role": "Co-Leader",
-            "contribution": "UI, Data Analysis, Model-training, Logic Building",
-            "bio": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technology ",
-            "github": "https://github.com/swarnabha-dev",
-            "email": "swarnabhahalder80137@gmail.com"
-        }
-    ]
+load_css(CSS_FILE)
 
-    # Mixed source: URL + local image
-    profile = [
-        "https://avatars.githubusercontent.com/u/143516210?v=4",  # Remote
-        "assets/team/10001314851.jpg"  # Local
-    ]
+# --- HELPER TO ENCODE IMAGES ---
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
 
-    st.markdown("<br>", unsafe_allow_html=True)
+# --- TEAM DATA ---
+team_members = [
+    {
+        "name": "Mike Cannon-Brookes",
+        "role": "Co-Founder & Co-CEO",
+        "image_path": os.path.join(ASSETS_DIR, "mike.png"), # Replace with your image paths
+        "description": "Mike is a visionary leader driving our company's mission forward with passion and innovation.",
+    },
+    {
+        "name": "Scott Farquhar",
+        "role": "Co-Founder & Co-CEO",
+        "image_path": os.path.join(ASSETS_DIR, "scott.png"),
+        "description": "Scott's strategic mindset and focus on culture have been instrumental in our growth and success.",
+    },
+    {
+        "name": "Sri Viswanath",
+        "role": "Chief Technology Officer",
+        "image_path": os.path.join(ASSETS_DIR, "sri.png"),
+        "description": "Sri leads our technology strategy, building robust and scalable platforms for the future.",
+    },
+    {
+        "name": "Anu Bharadwaj",
+        "role": "Head of Enterprise",
+        "image_path": os.path.join(ASSETS_DIR, "anu.png"),
+        "description": "Anu is dedicated to delivering exceptional value and solutions to our enterprise customers.",
+    },
+    {
+        "name": "Erika Fisher",
+        "role": "CAO & General Counsel",
+        "image_path": os.path.join(ASSETS_DIR, "erika.png"),
+        "description": "Erika oversees our administrative and legal functions, ensuring operational excellence.",
+    },
+    {
+        "name": "James Beer",
+        "role": "Chief Financial Officer",
+        "image_path": os.path.join(ASSETS_DIR, "james.png"),
+        "description": "James manages the financial health of the company, guiding our long-term economic strategy.",
+    },
+]
 
-    for i, member in enumerate(team_members):
-        try:
-            image_src = profile[i]
-        except IndexError:
-            image_src = "https://via.placeholder.com/120"
+# --- PAGE LAYOUT ---
+st.markdown('<h1 class="main-title">Our leadership team</h1>', unsafe_allow_html=True)
+st.markdown(
+    '<p class="subtitle">With over 100 years of combined experience, we\'ve got a well-seasoned team at the helm.</p>',
+    unsafe_allow_html=True
+)
+st.write("---")
 
-        with st.container():
-            col1, col2 = st.columns([1, 3])
-            with col1:
-                # Render image with consistent class
-                if image_src.startswith("http"):
-                    st.markdown(f"""
-                    <img src="{image_src}" class="profile-photo"/>
-                    """, unsafe_allow_html=True)
-                elif os.path.exists(image_src):
-                    encoded = encode_image_to_base64(image_src)
-                    st.markdown(f"""
-                    <img src="data:image/jpeg;base64,{encoded}" class="profile-photo"/>
-                    """, unsafe_allow_html=True)
-                else:
-                    st.image("https://via.placeholder.com/120", width=120)
+# --- GRID LAYOUT FOR TEAM MEMBERS ---
+cols_per_row = 3
+# Create a list of columns, e.g., [col1, col2, col3]
+cols = st.columns(cols_per_row)
 
-            with col2:
-                st.markdown(f"""
-                <div class="team-card">
-                    <h3>{member['name']}</h3>
-                    <h4>{member['role']}</h4>
-                    <p>{member['bio']}</p>
-                    <div class="contact-info">
-                        <strong>Contact:</strong><br>
-                        {member['email']}<br>
-                        <a href="{member['github']}" target="_blank">GitHub Profile</a>
-                    </div>
+# Define a list of background colors, it will cycle through them
+bg_colors = ["#f8dc7a", "#6de2c5", "#f5c3bd", "#c5e26d", "#6db6e2", "#e2a06d"]
+
+# Loop through team members and assign them to columns
+for i, member in enumerate(team_members):
+    with cols[i % cols_per_row]:
+        # Encode local image
+        encoded_image = get_base64_image(member["image_path"])
+        
+        # Determine the background color from the cycle
+        color = bg_colors[i % len(bg_colors)]
+        
+        st.markdown(f"""
+        <div class="team-card">
+            <div class="image-container" style="background-color: {color};">
+                <img src="data:image/png;base64,{encoded_image}" class="profile-image">
+                <div class="overlay">
+                    <div class="description-text">{member['description']}</div>
                 </div>
-                """, unsafe_allow_html=True)
+            </div>
+            <h3>{member['name']}</h3>
+            <p class="role">{member['role']}</p>
+        </div>
+        """, unsafe_allow_html=True)
+        # Add some vertical space between rows
+        st.markdown("<br>", unsafe_allow_html=True)
+
+
+
+
+    # team_members = [
+    #     {
+    #         "name": "Arijit Chowdhury",
+    #         "role": "Leader",
+    #         "contribution": "Frontend->UI, Data Analysis, Data visualization, Backend-> logic-building, Model-training, Logic-building, Database-Management",
+    #         "bio": "B.Sc Student at University of Calcutta in Computer Science",
+    #         "github": "https://github.com/student-Arijit",
+    #         "email": "arijitchowdhury4467@gmail.com" 
+    #     },
+    #     {
+    #         "name": "Swarnabha Halder",
+    #         "role": "Co-Leader",
+    #         "contribution": "UI, Data Analysis, Model-training, Logic Building",
+    #         "bio": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technology ",
+    #         "github": "https://github.com/swarnabha-dev",
+    #         "email": "swarnabhahalder80137@gmail.com"
+    #     }
+    # ]
+
+    # # Mixed source: URL + local image
+    # profile = [
+    #     "https://avatars.githubusercontent.com/u/143516210?v=4",  # Remote
+    #     "assets/team/10001314851.jpg"  # Local
+    # ]
+
+   
