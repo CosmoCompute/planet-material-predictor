@@ -424,7 +424,7 @@ div[data-testid="stMarkdownContainer"] > div:first-child > p {
     margin: 0 auto 16px;
     overflow: hidden;
     position: relative;
-    border-radius: 8px; /* Rounded corners for the background color block */
+    border-radius: 8px;
 }
 
 .profile-img {
@@ -434,7 +434,7 @@ div[data-testid="stMarkdownContainer"] > div:first-child > p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease; /* Smooth transition for zoom */
+    transition: transform 0.3s ease;
 }
 
 /* Image zoom on card hover */
@@ -444,7 +444,7 @@ div[data-testid="stMarkdownContainer"] > div:first-child > p {
 
 /* --- Member Info Styling (Name & Role) --- */
 .member-info {
-    flex-grow: 1; /* Allows this section to grow, pushing description down */
+    flex-grow: 1; /* Pushes description down */
 }
 
 .member-info h3 {
@@ -460,7 +460,6 @@ div[data-testid="stMarkdownContainer"] > div:first-child > p {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    /* Reserve space to prevent layout shifts if roles have different line counts */
     min-height: 2.7rem; 
 }
 
@@ -469,21 +468,44 @@ div[data-testid="stMarkdownContainer"] > div:first-child > p {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, margin-top 0.4s ease-out, padding-top 0.4s ease-out;
-    font-size: 14px;
-    color: #495057;
-    border-top: 1px solid transparent; /* Prepare for the border */
+    transition: all 0.4s ease-out; /* Animate all properties */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.member-description p {
-    text-align: left; /* Better for reading descriptions */
+.description-content {
+    text-align: left; /* Left-align the bio and contribution text */
+}
+
+.description-content p {
+    margin: 4px 0; /* Tighter vertical spacing for text */
+    font-size: 14px;
+    color: #495057;
 }
 
 /* Reveal the description on card hover */
 .team-member-card:hover .member-description {
-    max-height: 200px; /* Animate to this height */
+    max-height: 300px; /* Adjust if your content is longer */
     opacity: 1;
     margin-top: 12px;
     padding-top: 12px;
-    border-top-color: #e9ecef; /* Fade in the separator line */
+    border-top: 1px solid #e9ecef;
+}
+
+/* --- Social Links --- */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    margin-top: 12px;
+}
+
+.social-links a {
+    color: #5E6C84; /* Default icon color */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0d6efd; /* Blue color on hover */
 }
