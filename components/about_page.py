@@ -27,45 +27,45 @@ def about_us():
         {
             "name": "Swarnabha Halder",
             "role": "CO-LEADER",
-            "description": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technolog contribution: UI, Data Analysis, Model-training, Logic Building",
+            "description": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technolog\ncontribution: UI, Data Analysis, Model-training, Logic Building\ngithub: https://github.com/swarnabha-dev\nemail: h.swarnabha@gmail.com",
             "image_path": "assets/team/10001314851.jpg",
             "bg_color": "#fdbb2d" # Yellow
         },
         {
-            "name": "Scott Farquhar",
-            "role": "CO-FOUNDER & CO-CEO",
-            "description": "Your short description for Scott. This text appears on hover.",
-            "image_path": "assets/team/scott.jpg",
+            "name": "Arijit Chowdhury",
+            "role": "Leader",
+            "description": "B.Sc Student at University of Calcutta in Computer Science.\ncontribution: Frontend->UI, Data Analysis, Data visualization, Backend-> logic-building, Model-training, Logic-building, Database-Management\ngithub: https://github.com/student-Arijit\nemail: arijitchowdhury4467@gmail.com",
+            "image_path": "https://avatars.githubusercontent.com/u/143516210?v=4",
             "bg_color": "#1fe6a8" # Green
-        },
-        {
-            "name": "Sri Viswanath",
-            "role": "CHIEF TECHNOLOGY OFFICER",
-            "description": "Your short description for Sri. This text appears on hover.",
-            "image_path": "assets/team/sri.jpg",
-            "bg_color": "#f6a7a6" # Pink
-        },
-        {
-            "name": "Anu Bharadwaj",
-            "role": "HEAD OF ENTERPRISE & CLOUD PLATFORM",
-            "description": "Your short description for Anu. This text appears on hover.",
-            "image_path": "assets/team/anu.jpg",
-            "bg_color": "#1fe6a8" # Green
-        },
-        {
-            "name": "Erika Fisher",
-            "role": "CHIEF ADMINISTRATIVE OFFICER",
-            "description": "Your short description for Erika. This text appears on hover.",
-            "image_path": "assets/team/erika.jpg",
-            "bg_color": "#2873f4" # Blue
-        },
-        {
-            "name": "James Beer",
-            "role": "CHIEF FINANCIAL OFFICER",
-            "description": "Your short description for James. This text appears on hover.",
-            "image_path": "assets/team/james.jpg",
-            "bg_color": "#fdbb2d" # Yellow
         }
+        # {
+        #     "name": "Sri Viswanath",
+        #     "role": "CHIEF TECHNOLOGY OFFICER",
+        #     "description": "Your short description for Sri. This text appears on hover.",
+        #     "image_path": "assets/team/sri.jpg",
+        #     "bg_color": "#f6a7a6" # Pink
+        # },
+        # {
+        #     "name": "Anu Bharadwaj",
+        #     "role": "HEAD OF ENTERPRISE & CLOUD PLATFORM",
+        #     "description": "Your short description for Anu. This text appears on hover.",
+        #     "image_path": "assets/team/anu.jpg",
+        #     "bg_color": "#1fe6a8" # Green
+        # },
+        # {
+        #     "name": "Erika Fisher",
+        #     "role": "CHIEF ADMINISTRATIVE OFFICER",
+        #     "description": "Your short description for Erika. This text appears on hover.",
+        #     "image_path": "assets/team/erika.jpg",
+        #     "bg_color": "#2873f4" # Blue
+        # },
+        # {
+        #     "name": "James Beer",
+        #     "role": "CHIEF FINANCIAL OFFICER",
+        #     "description": "Your short description for James. This text appears on hover.",
+        #     "image_path": "assets/team/james.jpg",
+        #     "bg_color": "#fdbb2d" # Yellow
+        # }
     ]
 
     # --- RENDER TEAM MEMBERS IN A GRID ---
