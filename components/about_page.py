@@ -27,7 +27,7 @@ def about_us():
         {
             "name": "Swarnabha Halder",
             "role": "CO-LEADER",
-            "description": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technolog\ncontribution: UI, Data Analysis, Model-training, Logic Building\ngithub: https://github.com/swarnabha-dev\nemail: h.swarnabha@gmail.com",
+            "description": "B.Tech in Computer Science and Engineering with Specialization in Data Science from Sikkim Manipal Institute of Technolog \n contribution: UI, Data Analysis, Model-training, Logic Building\ngithub: https://github.com/swarnabha-dev\nemail: h.swarnabha@gmail.com",
             "image_path": "assets/team/10001314851.jpg",
             "bg_color": "#fdbb2d" # Yellow
         },
