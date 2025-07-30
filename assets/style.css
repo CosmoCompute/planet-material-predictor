@@ -506,27 +506,42 @@ div[data-testid="stMarkdownContainer"] > div:first-child > p {
     margin-top: 12px;
 }
 
-.social-links a svg {
-  transition: transform 0.3s ease, filter 0.3s ease;
-  transform-origin: center;
-}
-
-.social-links a:hover svg {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
-}
-
-/* Optional: show original GitHub "white-circle" style on hover using background image */
 .social-links a.github-icon {
+  position: relative;
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
-  background-size: cover;
-  transition: transform 0.3s ease;
 }
 
-.social-links a.github-icon:hover {
+.social-links a.github-icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 2;
+}
+
+.social-links a.github-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+.social-links a.github-icon:hover svg {
+  opacity: 0;
   transform: scale(1.2);
-  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
+}
+
+.social-links a.github-icon:hover::after {
+  opacity: 1;
+  transform: scale(1.2);
 }
