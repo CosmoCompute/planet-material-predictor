@@ -506,11 +506,27 @@ div[data-testid="stMarkdownContainer"] > div:first-child > p {
     margin-top: 12px;
 }
 
-.social-links a {
-    color: #5E6C84; /* Default icon color */
-    transition: color 0.3s ease;
+.social-links a svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  transform-origin: center;
 }
 
-.social-links a:hover {
-    color: #0d6efd; /* Blue color on hover */
+.social-links a:hover svg {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Optional: show original GitHub "white-circle" style on hover using background image */
+.social-links a.github-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+
+.social-links a.github-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
 }
