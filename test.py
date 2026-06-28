@@ -353,7 +353,7 @@ with st.sidebar:
     planet = st.selectbox(
         "Select Planet/Body",
         ["Venus", "Mars", "Earth", "Moon", "Custom"],
-        index=0
+        index=1
     )
     
     # Planet properties

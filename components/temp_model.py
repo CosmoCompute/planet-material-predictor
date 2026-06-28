@@ -30,7 +30,13 @@ def load_and_prepare_data():
     try:
         directory = Path("data/data_temp/")
         file_dict = {f.stem: f.name for f in directory.iterdir() if f.is_file()}
-        selected_name = st.selectbox("Select a file:", list(file_dict.keys()))
+        options = list(file_dict.keys())
+        default_idx = 0
+        for idx, opt in enumerate(options):
+            if "mars" in opt.lower():
+                default_idx = idx
+                break
+        selected_name = st.selectbox("Select a file:", options, index=default_idx)
 
         file_name = file_dict[selected_name]
         df = db_utils.load_db(file_name, "temp")

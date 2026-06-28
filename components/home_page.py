@@ -27,7 +27,7 @@ def home():
                 padding: 0 !important;
             }
             /* Ensure the iframe itself takes full width and fills height */
-            iframe[title="streamlit_share.components.v1.html"] {
+            iframe {
                 width: 100% !important;
                 height: 100vh !important;
                 border: none !important;
@@ -189,4 +189,4 @@ def home():
     </body>
     </html>
     """
-    st.components.v1.html(html_content, height=900, scrolling=False)
+    st.iframe(html_content, height=900)

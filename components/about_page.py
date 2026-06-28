@@ -26,7 +26,7 @@ def about_us():
                 padding: 0 !important;
             }
             /* Ensure the iframe itself takes full width and fills height */
-            iframe[title="streamlit_share.components.v1.html"] {
+            iframe {
                 width: 100% !important;
                 height: 1100px !important;
                 border: none !important;
@@ -36,8 +36,7 @@ def about_us():
             /* Hide the main streamlit header/footer for home page to make it clean */
             header[data-testid="stHeader"] {
                 background: transparent !important;
-            }
-        </style>
+            }</style>
     """, unsafe_allow_html=True)
 
     # Base64-encode local team image
@@ -388,4 +387,4 @@ def about_us():
     </body>
     </html>
     """
-    st.components.v1.html(html_content, height=1050, scrolling=True)
+    st.iframe(html_content, height=1050)
