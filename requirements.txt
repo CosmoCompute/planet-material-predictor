@@ -1,0 +1,11 @@
+streamlit
+openpyxl
+duckdb
+statsmodels
+matplotlib
+gdown
+pandas
+seaborn
+scikit-learn
+plotly
+tensorflow
